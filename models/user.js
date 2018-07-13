@@ -29,7 +29,16 @@ const userSchema = new Schema({
     type: String,
     required: true
   },
-  socialMedia: {
+  facebook: {
+    type: String
+  },
+  instagram: {
+    type: String
+  },
+  twitter: {
+    type: String
+  },
+  linkedin: {
     type: String
   },
   website: {
