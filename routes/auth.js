@@ -66,8 +66,6 @@ router.get('/login', (req, res, next) => {
   res.render('auth/login');
 });
 
-<<<<<<< HEAD
-=======
 router.post('/login', (req, res, next) => {
   if (req.session.currentUser) {
     res.redirect('/');
@@ -101,5 +99,4 @@ router.post('/logout', (req, res, next) => {
   res.redirect('/');
 });
 
->>>>>>> f297a8e3704ba1dadc04d693e69372a23bbb337d
 module.exports = router;
