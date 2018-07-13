@@ -1,22 +1,28 @@
 'use strict';
 
+// --------- App init --------- //
+
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
-// Routes
+// --------- Require routes --------- //
+
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
-const usersRouter = require('./routes/users');
+const authRouter = require('./routes/auth');
+
+// --------- Express init --------- //
 
 const app = express();
 
-// view engine setup
+// --------- View engine setup --------- //
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
-// Middlewares
+// --------- Middlewares --------- //
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -24,23 +30,21 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// --------- Setup routes --------- //
+
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/org', usersRouter);
+app.use('/auth', authRouter);
 
-// -- 404 and error handler
+// --------- 404 and Error handler --------- //
 
-// NOTE: requires a views/not-found.ejs template
 app.use((req, res, next) => {
   res.status(404);
   res.render('not-found');
 });
 
-// NOTE: requires a views/error.ejs template
 app.use((err, req, res, next) => {
-  // always log the error
   console.error('ERROR', req.method, req.path, err);
-
-  // only render if the error ocurred before sending the response
   if (!res.headersSent) {
     res.status(500);
     res.render('error');
