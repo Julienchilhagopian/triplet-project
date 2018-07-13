@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
-  name: {
+  username: {
     type: String,
     required: true
   },
@@ -14,20 +14,17 @@ const userSchema = new Schema({
   },
   categories: {
     type: String,
-    required: true,
+    // required: true,
     enum: ['Medicines', 'Food', 'Education']
   },
   description: {
-    type: String,
-    required: true
+    type: String
   },
   phone: {
-    type: String,
-    required: true
+    type: String
   },
   mail: {
-    type: String,
-    required: true
+    type: String
   },
   facebook: {
     type: String
