@@ -54,6 +54,13 @@ app.use(session({
   }
 }));
 
+// --------- Current user --------- //
+
+app.use((req, res, next) => {
+  app.locals.currentUser = req.session.currentUser; // this create a local variable.
+  next();
+});
+
 // --------- Setup routes --------- //
 
 app.use('/', indexRouter);
