@@ -3,15 +3,18 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-.nav-logout {
-  display: flex;
-  justify-content: space-between;
-  
-}
+/* ----- Login and Logout form ----- */
 
 .field {
   text-align: center;
   padding: 10px;
+}
+
+/* ----- Nav-bar ----- */
+
+.nav-logout {
+  display: flex;
+  justify-content: space-between;
 }
 
 .nav-already-user{
@@ -28,4 +31,54 @@ body {
   display: inline-block;
   font-size: 16px;
   border-radius: 10px;
+}
+
+/* ----- Home page ----- */
+
+.home-header {
+  background-image: url('https://foreignpolicymag.files.wordpress.com/2017/05/gettyimages-670871510.jpg?w=960');
+  padding: 150px 0 150px;
+  margin-bottom: 50px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.home-header h1 {
+  text-align: center;
+  color: white;
+  font-size: 50px;
+}
+
+.category-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.card img {
+  width: 100px;
+}
+
+@media (min-width: 767px) {
+  .category-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}
+
+@media (min-width: 767px) {
+  .card {
+    width: 28%;
+    background: rgb(250, 255, 239);
+     box-shadow: 0 8px 8px rgba(0,0,0,0.15);
+     padding: 10px;
+     margin-bottom: 15px;
+  }
+}
+
+@media (min-width: 767px) {
+  .card img {
+    width: 100px;
+    text-align: center;
+  }
 }

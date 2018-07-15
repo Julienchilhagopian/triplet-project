@@ -13,7 +13,7 @@
     <nav class="nav-logout">
       <p>Logged in as Mr. {{currentUser.username}}</p>
       <form method="POST" action="/auth/logout">
-        <button class="logout-btn">logout</button>
+        <button class="logout-btn">log out</button>
       </form>
     </nav>
     {{else}}
@@ -25,6 +25,7 @@
     {{/if}}
   </header>
   {{{body}}}
+  <footer>Footer</footer>
 
 </body>
 
