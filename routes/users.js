@@ -3,9 +3,20 @@
 const express = require('express');
 const router = express.Router();
 
-/* GET users listing. */
+const User = require('../models/user');
+
+/* GET organisations listing. */
 router.get('/', (req, res, next) => {
-  res.send('respond with a resource');
+  User.find()
+    .then((result) => {
+      const data = {
+        users: result
+      };
+      res.render('org-list', data);
+    })
+    .catch(error => {
+      console.log(error);
+    });
 });
 
 module.exports = router;
