@@ -6,3 +6,18 @@ body {
 a {
   color: #00B7FF;
 }
+
+.nav-logout {
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.field {
+  text-align: center;
+  padding: 10px;
+}
+
+.nav-already-user{
+ text-align: right;
+}
