@@ -19,4 +19,19 @@ router.get('/', (req, res, next) => {
     });
 });
 
+/* GET organisations listing. */
+router.get('/:id', (req, res, next) => {
+  const userId = req.params.id;
+  User.findById(userId)
+    .then((result) => {
+      const data = {
+        user: result
+      };
+      res.render('org-details', data);
+    })
+    .catch(error => {
+      console.log(error);
+    });
+});
+
 module.exports = router;
