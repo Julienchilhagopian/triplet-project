@@ -9,12 +9,17 @@ router.get('/', (req, res, next) => {
   res.render('edit-profile');
 });
 
-router.post('/edit-profile', (req, res, next) => {
-  const newDescription = req.body.description;
+router.post('/', (req, res, next) => {
   const currentUser = req.session.currentUser;
-  User.findByIdAndUpdate({_id: currentUser._id}, {$push: {description: newDescription}})
+
+  const data = {
+    description: req.body.description,
+    phone: req.body.phone
+  };
+
+  User.findByIdAndUpdate(currentUser._id, data)
     .then(() => {
-      console.log('testing');
+      res.redirect('/');
     });
 });
 // // post /edit-profile
