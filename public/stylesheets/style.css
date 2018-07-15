@@ -3,10 +3,6 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
-}
-
 .nav-logout {
   display: flex;
   justify-content: space-between;
@@ -20,4 +16,16 @@ a {
 
 .nav-already-user{
  text-align: right;
+}
+
+.logout-btn {
+  background-color: rgb(92, 129, 160); 
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 10px;
 }
