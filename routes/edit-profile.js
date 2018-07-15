@@ -9,19 +9,20 @@ router.get('/', (req, res, next) => {
   res.render('edit-profile');
 });
 
-router.post('/edit-profile', (req, res, next) => {
+router.post('/', (req, res, next) => {
+  console.log(req);
   const newDescription = req.body.description;
   const currentUser = req.session.currentUser;
-  User.findByIdAndUpdate({_id: currentUser._id}, {$push: {description: newDescription}})
+  console.log('testing');
+  User.findByIdAndUpdate(currentUser._id, {description: newDescription})
     .then(() => {
-      console.log('testing');
     });
 });
 // // post /edit-profile
 // // PRERTMISSIONS?
 // // VALIDATE Post body
 //   User.findOneAndUpdate({_id: the id of the cuurent user}, UPDATEDATA)
-//     .then((uatedUser) = { // HOW TO UPDATE AND RETURN UPDATED DOCUMENT
+//     .then((updatedUser) = { // HOW TO UPDATE AND RETURN UPDATED DOCUMENT
 //       req.session.currentUser = updaTEDuSER
 
 //     })
