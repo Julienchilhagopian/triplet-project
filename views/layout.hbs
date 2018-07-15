@@ -1,19 +1,32 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>{{title}}</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    {{{body}}}
 
-      {{#if currentUser}}
-      <p>Logged as mister {{currentUser.username}}
-        <form method="POST" action="/auth/logout">
-        <button>logout</button>
-        </form>
-      </p>
-      {{/if}}
-      
-  </body>
+<head>
+  <title>{{title}}</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <header>
+
+    {{#if currentUser}}
+    <nav class="nav-logout">
+      <p>Logged in as Mr. {{currentUser.username}}</p>
+      <form method="POST" action="/auth/logout">
+        <button class="logout-btn">log out</button>
+      </form>
+    </nav>
+    {{else}}
+    <nav class="nav-already-user">
+      <a href="/auth/signup">Sign up</a>
+      |
+      <a href="/auth/login">Login</a>
+    </nav>
+    {{/if}}
+  </header>
+  {{{body}}}
+  <footer>Footer</footer>
+
+</body>
+
 </html>

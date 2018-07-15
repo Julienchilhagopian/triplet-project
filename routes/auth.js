@@ -28,7 +28,7 @@ router.post('/signup', (req, res, next) => {
     res.redirect('/auth/signup');
     return;
   }
-  User.findOne({username: req.body.username})
+  User.findOne({ username: req.body.username })
     .then((user) => {
       if (user) {
         return res.redirect('/auth/signup');
