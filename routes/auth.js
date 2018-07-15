@@ -45,7 +45,7 @@ router.post('/signup', (req, res, next) => {
       return newUser.save()
         .then(() => {
           req.session.currentUser = newUser;
-          res.redirect('/');
+          res.render('edit-profile');
         });
     })
     .catch(next);
