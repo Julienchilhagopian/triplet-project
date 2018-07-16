@@ -44,54 +44,98 @@ body {
 }
 
 /* ----- Home page ----- */
+/* ---- Mobile version - Home - page 1 ---- */
 
-.category-card {
-  display: flex;
-  flex-direction: column;
+h1 {
+  font-size: 25px;
 }
 
-.card {
+hr {
+  width: 20%;
+}
+
+p {
+  margin-top: 75px;
+  margin-bottom: 50px;
+}
+
+.titles a {
+  font-size: 15px;
+  margin: 0 40px;
+  background-color: rgb(252, 106, 49);
+  padding: 10px;
+  text-decoration: none;
+  text-emphasis: white;
+}
+
+.titles {
   display: flex;
+  text-align: center;
+  color: white;
+  background-image: url(https://ichef.bbci.co.uk/news/976/cpsprodpb/D159/production/_97039535_caracas.jpg);
+  height: 95vh;
+  background-repeat: no-repeat;
+  background-size: cover;
   align-items: center;
-  border-bottom: 2px solid rgb(153, 151, 151);
-  margin-top: 40px;
-  
 }
 
-.card img {
-  width: 50px;
+/* ---- Mobile version - Home - page 2 ---- */
+
+img {
+  width: 80px
 }
+
+.categories-container {
+  text-align: center;
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.categories-container img {
+  padding-top: 25px;
+}
+
+/* Avoid the text to display when on mobile version */
+.categories-container p {
+  display: none;
+}
+
+
+/* Media query for home page */
 
 @media (min-width: 767px) {
+  h1 {
+    font-size: 60px;
+    margin-bottom: 20px;
+   
+  }
+  h2 {
+    display: block;
+    font-size: 20px;
+  
+  }
+
+  /* Now displaying when its website versions  */
+  .categories-container p {
+    display: unset;
+  }
+
   .category-cards {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
   }
+
   .card {
     display: block;
     width: 28%;
-    background: rgb(250, 255, 239);
-     box-shadow: 0 8px 8px rgba(0,0,0,0.15);
-     padding: 10px;
-     margin-bottom: 15px;
+    background: rgba(128, 128, 128, 0.329);
+    box-shadow: 0 8px 8px rgba(0,0,0,0.15);
+    padding: 10px;
+    margin-bottom: 15px;
   }
-  .card img {
-    width: 100px;
-    text-align: center;
-  }
-  .home-header {
-    background-image: url('https://foreignpolicymag.files.wordpress.com/2017/05/gettyimages-670871510.jpg?w=960');
-    padding: 150px 0 150px;
-    margin-bottom: 8vh;
-    background-size: 100%;
-    background-repeat: no-repeat;
-  }
-  .home-header h1 {
-    text-align: center;
-    color: white;
-    font-size: 50px;
-  }
+ 
 }
-
-
