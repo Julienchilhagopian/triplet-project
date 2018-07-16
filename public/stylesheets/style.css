@@ -31,6 +31,10 @@ body {
  text-align: right;
 }
 
+
+
+/* Log out button */
+
 .logout-btn {
   background-color: rgb(92, 129, 160); 
   border: none;
@@ -65,9 +69,10 @@ p {
   background-color: rgb(252, 106, 49);
   padding: 10px;
   text-decoration: none;
-  text-emphasis: white;
   border-radius: 5px;
+  color: white;
 }
+
 
 .titles {
   display: flex;
@@ -111,12 +116,11 @@ img {
   h1 {
     font-size: 60px;
     margin-bottom: 20px;
-   
   }
+
   h2 {
     display: block;
     font-size: 20px;
-  
   }
 
   /* Now displaying when its website versions  */
