@@ -10,12 +10,16 @@ router.get('/', (req, res, next) => {
 });
 
 router.post('/', (req, res, next) => {
-  console.log(req);
-  const newDescription = req.body.description;
   const currentUser = req.session.currentUser;
-  console.log('testing');
-  User.findByIdAndUpdate(currentUser._id, {description: newDescription})
+
+  const data = {
+    description: req.body.description,
+    phone: req.body.phone
+  };
+
+  User.findByIdAndUpdate(currentUser._id, data)
     .then(() => {
+      res.redirect('/');
     });
 });
 // // post /edit-profile
