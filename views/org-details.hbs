@@ -25,10 +25,8 @@
     {{/if}} {{#if user.twitter}}
     <h4>Twitter: </h4>
     <p>{{user.twitter}}</p>
-    {{/if}} {{#if currentUser}}
-    <button>
-      <a href="edit-profile/">edit</a>
-    </button>
+    {{/if}} {{#if data.userEdit}}
+    <a href="/edit-profile">Edit</a>
     {{/if}}
 
     <a href="{{user.website}}" target="_blank"> click here to see the Web page</a>

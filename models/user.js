@@ -13,8 +13,8 @@ const userSchema = new Schema({
     required: true
   },
   categories: [{
-    name: String,
-    isChecked: Boolean
+    type: String,
+    enum: ['medicine', 'food', 'education']
   }],
   description: {
     type: String

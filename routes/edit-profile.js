@@ -6,26 +6,28 @@ const router = express.Router();
 const User = require('../models/user');
 
 router.get('/', (req, res, next) => {
-  res.render('edit-profile');
+  User.findById(req.session.currentUser._id)
+    .then((user) => {
+      res.render('edit-profile', user);
+    });
 });
 
 router.post('/', (req, res, next) => {
   const currentUser = req.session.currentUser;
 
-  const categories = [
-    {
-      name: 'medicine',
-      isChecked: !!req.body.medicine
-    },
-    {
-      name: 'education',
-      isChecked: !!req.body.education
-    },
-    {
-      name: 'food',
-      isChecked: !!req.body.food
-    }
-  ];
+  const categories = [];
+
+  if (req.body.medicine) {
+    categories.push('medicine');
+  }
+
+  if (req.body.food) {
+    categories.push('food');
+  }
+
+  if (req.body.education) {
+    categories.push('education');
+  }
 
   const data = {
     description: req.body.description,
