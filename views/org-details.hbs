@@ -1,12 +1,34 @@
 <h1>Organisation details</h1>
 
 <div>
-    <div> 
-      <h2>{{user.username}}</h2>
-      <p>{{user.description}}</p>
-      <h3>Phone: {{user.phone}}</h3>
-      <h3>Mail: {{user.mail}}</h3>
-      <h3>Facebook: {{user.facebook}}</h3>
-      <a href="{{user.website}}" target="_blank"> click here to see the Web page</a>
-    </div>
+  <div>
+    <h2>{{user.username}}</h2>
+
+    <h3>Type of organisation:</h3>
+    {{#each user.categories}} {{#if this.isChecked}}
+    <h4>{{this.name}}</h4>
+    {{/if}} {{/each}}
+
+    <p>{{user.description}}</p>
+
+    <h3>Mail: {{user.mail}}</h3>
+
+    {{#if user.phone}}
+    <h4>Phone : </h4>
+    <p>{{user.phone}}</p>
+    {{/if}} {{#if user.facebook}}
+    <h4>Facebook : </h4>
+    <p>{{user.facebook}}</p>
+    {{/if}} {{#if user.instagram}}
+    <h4>Instagram : </h4>
+    <p>{{user.instagram}}</p>
+    {{/if}} {{#if user.twitter}}
+    <h4>Twitter: </h4>
+    <p>{{user.twitter}}</p>
+    {{/if}} {{#if data.userEdit}}
+    <a href="/edit-profile">Edit</a>
+    {{/if}}
+
+    <a href="{{user.website}}" target="_blank"> click here to see the Web page</a>
+  </div>
 </div>

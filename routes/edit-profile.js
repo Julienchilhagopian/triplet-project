@@ -6,15 +6,35 @@ const router = express.Router();
 const User = require('../models/user');
 
 router.get('/', (req, res, next) => {
-  res.render('edit-profile');
+  User.findById(req.session.currentUser._id)
+    .then((user) => {
+      res.render('edit-profile', user);
+    });
 });
 
 router.post('/', (req, res, next) => {
   const currentUser = req.session.currentUser;
 
+  const categories = [];
+
+  if (req.body.medicine) {
+    categories.push('medicine');
+  }
+
+  if (req.body.food) {
+    categories.push('food');
+  }
+
+  if (req.body.education) {
+    categories.push('education');
+  }
+
   const data = {
     description: req.body.description,
-    phone: req.body.phone
+    phone: req.body.phone,
+    mail: req.body.mail,
+    website: req.body.website,
+    categories: categories
   };
 
   User.findByIdAndUpdate(currentUser._id, data)
@@ -22,11 +42,12 @@ router.post('/', (req, res, next) => {
       res.redirect('/');
     });
 });
+
 // // post /edit-profile
 // // PRERTMISSIONS?
 // // VALIDATE Post body
 //   User.findOneAndUpdate({_id: the id of the cuurent user}, UPDATEDATA)
-//     .then((uatedUser) = { // HOW TO UPDATE AND RETURN UPDATED DOCUMENT
+//     .then((updatedUser) = { // HOW TO UPDATE AND RETURN UPDATED DOCUMENT
 //       req.session.currentUser = updaTEDuSER
 
 //     })

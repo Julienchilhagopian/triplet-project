@@ -12,11 +12,10 @@ const userSchema = new Schema({
     type: String,
     required: true
   },
-  categories: {
+  categories: [{
     type: String,
-    // required: true,
-    enum: ['Medicines', 'Food', 'Education']
-  },
+    enum: ['medicine', 'food', 'education']
+  }],
   description: {
     type: String
   },
@@ -33,9 +32,6 @@ const userSchema = new Schema({
     type: String
   },
   twitter: {
-    type: String
-  },
-  linkedin: {
     type: String
   },
   website: {

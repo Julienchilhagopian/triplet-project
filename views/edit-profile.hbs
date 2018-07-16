@@ -1,21 +1,42 @@
 <h1>Edit Profile</h1>
 
 <form method="POST" action="/edit-profile">
-
-  <div class="field" >
+  <div class="field">
     <label>Organisation name : </label>
-    <input type="text" name="name" value="{{currentUser.username}}"/>
+    <input type="text" name="name" value="{{this.username}}" />
   </div>
 
-  <div class="field" >
+  <div class="field">
     <label>Description :</label>
-    <input type="text" name="description" value="{{currentUser.description}}"/>
+    <input type="text" name="description" value="{{this.description}}" />
   </div>
 
-  <div class="field" >
+  <div class="field">
     <label>Phone :</label>
-    <input type="text" name="phone" value="{{currentUser.phone}}"/>
+    <input type="text" name="phone" value="{{this.phone}}" />
   </div>
+
+  <div class="field">
+    <label>Mail :</label>
+    <input type="email" name="mail" value="{{this.mail}}" />
+  </div>
+
+  <div class="field">
+    <label>Website :</label>
+    <input type="text" name="website" value="{{this.website}}" />
+  </div>
+
+  <div class="field">
+    <p>Type of organisation</p>
+    <label>Medicine</label>
+    <input type="checkbox" name="medicine" />
+    <label>Food</label>
+    <input type="checkbox" name="food" />
+    <label>Education</label>
+    <input type="checkbox" name="education" />
+  </div>
+
+
 
   <div class="field submit">
     <button type="submit">Save</button>
