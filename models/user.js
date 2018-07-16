@@ -15,17 +15,6 @@ const userSchema = new Schema({
   categories: [{
     name: String,
     isChecked: Boolean
-
-  },
-  {
-    name: String,
-    isChecked: Boolean
-
-  },
-  {
-    name: String,
-    isChecked: Boolean
-
   }],
   description: {
     type: String
