@@ -7,6 +7,7 @@ const User = require('../models/user');
 
 /* GET organisations listing. */
 router.get('/', (req, res, next) => {
+  console.log(req.query);
   User.find()
     .then((result) => {
       const data = {

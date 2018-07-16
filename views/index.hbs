@@ -3,24 +3,42 @@
     <h1>Venezuelans need your help</h1>
   </header>
   <div class="category-cards">
-    <div class="card">
-      <h2>Food</h2>
-      <img src="../images/001-food.png" alt="">
-      <p> voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-        culpa qui officia deserunt mollit anim id est laborum.</p>
-    </div>
-    <div class="card">
-      <h2>Medicine</h2>
-      <img src="../images/002-medicine.png" alt="">
-      <p> voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-        culpa qui officia deserunt mollit anim id est laborum.</p>
-    </div>
-    <div class="card">
-      <h2>Education</h2>
-      <img src="../images/003-book.png" alt="">
-      <p> voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-        culpa qui officia deserunt mollit anim id est laborum.</p>
-    </div>
+    <form action="/org" method="GET">
+      <input type="hidden" name="category" value="food">
+      <button>
+        <div class="card">
+          <h2>Food</h2>
+          <img src="../images/001-food.png" alt="">
+          <p> voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+      </button>
+    </form>
+
+    
+    <form action="/org" method="GET">
+      <input type="hidden" name="category" value="medicine">
+      <button>
+        <div class="card">
+          <h2>Medicine</h2>
+          <img src="../images/002-medicine.png" alt="">
+          <p> voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+      </button>
+    </form>
+
+    <form action="/org" method="GET">
+      <input type="hidden" name="category" value="education">
+      <button>
+        <div class="card">
+          <h2>Education</h2>
+          <img src="../images/003-book.png" alt="">
+          <p> voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+      </button>
+    </form>
   </div>
 
 </section>
