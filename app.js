@@ -15,6 +15,7 @@ const MongoStore = require('connect-mongo')(session);
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const authRouter = require('./routes/auth');
+const profileRouter = require('./routes/edit-profile');
 
 // --------- Express init --------- //
 
@@ -66,6 +67,7 @@ app.use((req, res, next) => {
 app.use('/', indexRouter);
 app.use('/org', usersRouter);
 app.use('/auth', authRouter);
+app.use('/edit-profile', profileRouter);
 
 // --------- 404 and Error handler --------- //
 

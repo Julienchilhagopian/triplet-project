@@ -4,13 +4,40 @@
 
   <div class="field">
     <label>Organisation name : </label>
-    <input type="text" name="name" />
+    <input type="text" name="name" value="{{currentUser.username}}" />
   </div>
 
   <div class="field">
     <label>Description :</label>
-    <input type="text" name="description" />
+    <input type="text" name="description" value="{{currentUser.description}}" />
   </div>
+
+  <div class="field">
+    <label>Phone :</label>
+    <input type="text" name="phone" value="{{currentUser.phone}}" />
+  </div>
+
+  <div class="field">
+    <label>Mail :</label>
+    <input type="email" name="mail" value="{{currentUser.mail}}" />
+  </div>
+
+  <div class="field">
+    <label>Website :</label>
+    <input type="text" name="website" value="{{currentUser.website}}" />
+  </div>
+
+  <div class="field">
+    <p>Type of organisation</p>
+    <label>Medicine</label>
+    <input type="checkbox" name="medicine" />
+    <label>Food</label>
+    <input type="checkbox" name="food" />
+    <label>Education</label>
+    <input type="checkbox" name="education" />
+  </div>
+
+
 
   <div class="field submit">
     <button type="submit">Save</button>

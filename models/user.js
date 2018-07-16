@@ -12,11 +12,21 @@ const userSchema = new Schema({
     type: String,
     required: true
   },
-  categories: {
-    type: String,
-    // required: true,
-    enum: ['Medicines', 'Food', 'Education']
+  categories: [{
+    name: String,
+    isChecked: Boolean
+
   },
+  {
+    name: String,
+    isChecked: Boolean
+
+  },
+  {
+    name: String,
+    isChecked: Boolean
+
+  }],
   description: {
     type: String
   },
@@ -33,9 +43,6 @@ const userSchema = new Schema({
     type: String
   },
   twitter: {
-    type: String
-  },
-  linkedin: {
     type: String
   },
   website: {
