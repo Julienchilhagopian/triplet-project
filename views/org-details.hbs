@@ -35,9 +35,9 @@
         <p>{{user.twitter}}</p>
       {{/if}}
       
-     {{#if currentUser._id}} 
-     <a href="/edit-profile">Edit</a>
-     {{/if}}
+      {{#if data.userEdit}}
+        <a href="/edit-profile">Edit</a>
+      {{/if}}
 
       <a href="{{user.website}}" target="_blank"> click here to see the Web page</a>
     </div>
