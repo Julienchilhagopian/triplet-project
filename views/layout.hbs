@@ -12,21 +12,22 @@
 
       {{#if currentUser}}
       <nav class="nav-logout">
-        <p>Logged in as Mr. {{currentUser.username}}</p>
+        <p>Logged in as {{currentUser.username}}</p>
         <form method="POST" action="/auth/logout">
           <button class="logout-btn">log out</button>
         </form>
       </nav>
       {{else}}
-      <nav class="nav-already-user">
+      <nav class="nav-not-logged">
         <a href="/auth/signup">Sign up</a>
         |
         <a href="/auth/login">Login</a>
       </nav>
       {{/if}}
     </header>
-    {{{body}}}
-    <footer>Footer</footer>
+  </div>
+  {{{body}}}
+  <footer>Footer</footer>
 
 </body>
 </div>
