@@ -7,6 +7,12 @@
       <h3>Phone: {{user.phone}}</h3>
       <h3>Mail: {{user.mail}}</h3>
       <h3>Facebook: {{user.facebook}}</h3>
+      <h3>Type of organisation:</h3>
+       {{#each user.categories}}
+        {{#if this.isChecked}} 
+          <h4>{{this.name}}</h4>
+        {{/if}}
+       {{/each}}
       <a href="{{user.website}}" target="_blank"> click here to see the Web page</a>
     </div>
 </div>

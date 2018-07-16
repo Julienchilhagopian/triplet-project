@@ -12,9 +12,27 @@ router.get('/', (req, res, next) => {
 router.post('/', (req, res, next) => {
   const currentUser = req.session.currentUser;
 
+  const categories = [
+    {
+      name: 'medicine',
+      isChecked: !!req.body.medicine
+    },
+    {
+      name: 'education',
+      isChecked: !!req.body.education
+    },
+    {
+      name: 'food',
+      isChecked: !!req.body.food
+    }
+  ];
+
   const data = {
     description: req.body.description,
-    phone: req.body.phone
+    phone: req.body.phone,
+    mail: req.body.mail,
+    website: req.body.website,
+    categories: categories
   };
 
   User.findByIdAndUpdate(currentUser._id, data)
