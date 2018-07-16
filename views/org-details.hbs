@@ -1,12 +1,19 @@
 <h1>Organisation details</h1>
 
 <div>
-    <div> 
-      <h2>{{user.username}}</h2>
-      <p>{{user.description}}</p>
-      <h3>Phone: {{user.phone}}</h3>
-      <h3>Mail: {{user.mail}}</h3>
-      <h3>Facebook: {{user.facebook}}</h3>
-      <a href="{{user.website}}" target="_blank"> click here to see the Web page</a>
-    </div>
+  <div>
+    <h2>{{user.username}}</h2>
+    <p>{{user.description}}</p>
+    <h3>Mail: {{user.mail}}</h3>
+    <h3>Facebook: {{user.facebook}}</h3>
+
+    {{#if user.phone}}
+    <h4>Phone : </h4>
+    <p>{{user.phone}}</p>
+    {{else}}
+    <p>No phone number provided</p>
+    {{/if}}
+
+    <a href="{{user.website}}" target="_blank"> click here to see the Web page</a>
+  </div>
 </div>
