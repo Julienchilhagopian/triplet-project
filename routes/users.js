@@ -7,7 +7,6 @@ const User = require('../models/user');
 
 /* GET organisations listing. */
 router.get('/', (req, res, next) => {
-  console.log(req.query);
   User.find()
     .then((result) => {
       const data = {
@@ -26,14 +25,17 @@ router.get('/:id', (req, res, next) => {
   const userId = req.params.id;
   User.findById(userId)
     .then((result) => {
-      if (req.session.currentUser._id === result.id) {
-        showEdit = true;
+      if (req.session.currentUser) {
+        if (req.session.currentUser._id === result.id) {
+          showEdit = true;
+        }
       }
+
       const data = {
         user: result,
         userEdit: showEdit
       };
-      res.render('org-details', { data: data });
+      res.render('org-details', data);
     })
     .catch(error => {
       console.log(error);

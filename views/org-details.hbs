@@ -2,30 +2,31 @@
 
 <div>
   <div>
-    <h2>{{user.username}}</h2>
+    <h2>Organisation name: {{user.username}}</h2>
 
-    <h3>Type of organisation:</h3>
-    {{#each user.categories}} {{#if this.isChecked}}
-    <h4>{{this.name}}</h4>
-    {{/if}} {{/each}}
+    <h4>Type of organisation: {{user.categories}} </h4>
 
-    <p>{{user.description}}</p>
+    <h4>Description: {{user.description}}</h4>
 
-    <h3>Mail: {{user.mail}}</h3>
+    <h4>Mail: {{user.mail}}</h4>
 
     {{#if user.phone}}
-    <h4>Phone : </h4>
-    <p>{{user.phone}}</p>
-    {{/if}} {{#if user.facebook}}
-    <h4>Facebook : </h4>
-    <p>{{user.facebook}}</p>
-    {{/if}} {{#if user.instagram}}
-    <h4>Instagram : </h4>
-    <p>{{user.instagram}}</p>
-    {{/if}} {{#if user.twitter}}
-    <h4>Twitter: </h4>
-    <p>{{user.twitter}}</p>
-    {{/if}} {{#if data.userEdit}}
+    <h4>Phone: {{user.phone}}</h4>
+    {{/if}} 
+
+    {{#if user.facebook}}
+    <h4>Facebook: {{user.facebook}}</h4>
+    {{/if}} 
+
+    {{#if user.instagram}}
+    <h4>Instagram: {{user.instagram}}</h4>
+    {{/if}} 
+    
+    {{#if user.twitter}}
+    <h4>Twitter: {{user.twitter}}</h4>
+    {{/if}} 
+
+    {{#if userEdit}}
     <a href="/edit-profile">Edit</a>
     {{/if}}
 
