@@ -7,7 +7,6 @@ const User = require('../models/user');
 
 /* GET organisations listing. */
 router.get('/', (req, res, next) => {
-  // var urlParams = new URLSearchParams(process.location.search);
   var queryCategory = req.query.category;
   User.find({categories: {$in: [queryCategory]}})
     .then((result) => {
