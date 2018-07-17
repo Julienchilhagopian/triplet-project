@@ -30,6 +30,7 @@ router.post('/', (req, res, next) => {
   }
 
   const data = {
+    username: req.body.username,
     description: req.body.description,
     phone: req.body.phone,
     mail: req.body.mail,
@@ -37,8 +38,11 @@ router.post('/', (req, res, next) => {
     categories: categories
   };
 
-  User.findByIdAndUpdate(currentUser._id, data)
-    .then(() => {
+  const options = {new: true};
+
+  User.findByIdAndUpdate(currentUser._id, data, options)
+    .then((user) => {
+      req.session.currentUser = user;
       res.redirect('/');
     });
 });
