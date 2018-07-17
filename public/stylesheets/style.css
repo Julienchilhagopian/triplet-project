@@ -1,5 +1,16 @@
+
+/* ---- reset ---- */
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 body {
-  padding: 50px;
+  margin: 0;
+  padding: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -15,6 +26,17 @@ body {
   width: 30%;
 } */
 
+.all-fields {
+  display: flex;
+  flex-direction: column;
+}
+
+.input input {
+  width: 200px;
+  height: 35px;
+  border-radius: 10px;
+}
+
 .field {
   text-align: center;
   padding: 10px;
@@ -25,13 +47,13 @@ body {
 .nav-logout {
   display: flex;
   justify-content: space-between;
+  margin-top: 17px;
 }
 
-.nav-already-user{
+.nav-not-logged{
  text-align: right;
+ margin-top: 45px;
 }
-
-
 
 /* Log out button */
 
@@ -58,31 +80,34 @@ hr {
   width: 20%;
 }
 
-p {
+.titles p {
   margin-top: 75px;
   margin-bottom: 50px;
 }
 
-.titles a {
+.titles button {
   font-size: 15px;
-  margin: 0 40px;
   background-color: rgb(252, 106, 49);
   padding: 10px;
-  text-decoration: none;
   border-radius: 5px;
+  border: none;
+  text-decoration: none;
   color: white;
+  display: inline-block;
 }
 
 
 .titles {
   display: flex;
+  justify-content: center;
+  flex-direction: column;
   text-align: center;
+  align-items: center;
   color: white;
   background-image: url(https://ichef.bbci.co.uk/news/976/cpsprodpb/D159/production/_97039535_caracas.jpg);
   height: 95vh;
   background-repeat: no-repeat;
   background-size: cover;
-  align-items: center;
 }
 
 /* ---- Mobile version - Home - page 2 ---- */
@@ -92,11 +117,23 @@ img {
 }
 
 .categories-container {
-  text-align: center;
   display: flex;
-  height: 100vh;
-  align-items: center;
-  justify-content: center;
+ align-items: center;
+ flex-flow: column wrap;
+ padding-top: 10%;
+}
+
+.card  {
+  padding: 10px;
+}
+
+.card button {
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
 }
 
 
@@ -123,24 +160,91 @@ img {
     font-size: 20px;
   }
 
-  /* Now displaying when its website versions  */
-  .categories-container p {
-    display: unset;
+  .categories-container {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around
   }
 
-  .category-cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+  /* ----- Now displaying when its website versions -----  */
+  .categories-container p {
+    display: unset;
   }
 
   .card {
     display: block;
     width: 28%;
-    background: rgba(128, 128, 128, 0.329);
+    background: rgba(160, 157, 157, 0.329);
     box-shadow: 0 8px 8px rgba(0,0,0,0.15);
     padding: 10px;
     margin-bottom: 15px;
   }
- 
+.card button {
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  outline:none;
+} 
 }
+
+/* ---- Organisation list mobile---- */
+
+ .detail-card {
+  width: 66%;
+  background: rgba(196, 191, 191, 0.329);
+  box-shadow: 0 8px 8px rgba(0,0,0,0.15);
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.all-org-list {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-around;
+  background: white;
+  box-shadow: 0 8px 8px rgba(0,0,0,0.15);
+  padding: 10px;
+  margin-bottom: 15px;
+
+  
+}
+
+@media (min-width: 767px) {
+  .detail-card {
+    width: 30%;
+    background: rgba(233, 180, 35, 0.329);
+    box-shadow: 0 8px 8px rgba(0,0,0,0.15);
+    padding: 10px;
+    margin-bottom: 15px;
+  }
+  .all-org-list {
+    display: flex;
+    flex-flow:  column row;
+    justify-content: space-around;
+    background: rgba(226, 223, 223, 0.329);
+    box-shadow: 0 8px 8px rgba(0,0,0,0.15);
+    padding: 10px;
+    margin-bottom: 15px;
+  }
+}
+
+@media (min-width: 961px) {
+  .detail-card {
+    width: 22%;
+    background: rgba(233, 180, 35, 0.329);
+    box-shadow: 0 8px 8px rgba(0,0,0,0.15);
+    padding: 10px;
+    margin-bottom: 15px;
+  }
+  .all-org-list {
+    display: flex;
+    flex-flow:  column row;
+    justify-content: space-around;
+    background: rgba(226, 223, 223, 0.329);
+    box-shadow: 0 8px 8px rgba(0,0,0,0.15);
+    padding: 10px;
+    margin-bottom: 15px;
+  }
+}
+
