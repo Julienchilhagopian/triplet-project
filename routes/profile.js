@@ -6,6 +6,9 @@ const router = express.Router();
 const User = require('../models/user');
 
 router.get('/edit', (req, res, next) => {
+  if (!req.session.currentUser) {
+    return res.redirect('/');
+  }
   User.findById(req.session.currentUser._id)
     .then((user) => {
       res.render('profile-edit', user);
