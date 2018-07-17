@@ -1,11 +1,10 @@
-<div class="header-details">
+<div class="container-org-details mobile-container">
   <h2>
     {{user.username}}</h2>
-</div>
-<div class="details-bg-image">
-  <img src="https://www.brookings.edu/wp-content/uploads/2017/04/venezuela_protest_flag001-e1491425661760.jpg" alt="">
-</div>
-<div class="container-org-details mobile-container">
+  <div class="details-bg-image">
+    <img src="https://www.brookings.edu/wp-content/uploads/2017/04/venezuela_protest_flag001-e1491425661760.jpg" alt="">
+  </div>
+
   <div class="org-types">
     {{#each user.categories}}
     <a href="/org?category={{this}}">
@@ -19,19 +18,22 @@
     <p>{{user.description}}</p>
   </div>
 
-  <div class="additional-info">
-    <h4>Mail: {{user.mail}}</h4>
+  <div class="contact-info">
+
+    <h4>Contact details</h4>
+    <hr>
+    <p>Mail: {{user.mail}}</p>
 
     {{#if user.phone}}
-    <h4>Phone: {{user.phone}}</h4>
+    <p>Phone: {{user.phone}}</p>
     {{/if}}
     <div class="social-media">
       {{#if user.facebook}}
-      <h4>Facebook: {{user.facebook}}</h4>
+      <p>Facebook: {{user.facebook}}</p>
       {{/if}} {{#if user.instagram}}
-      <h4>Instagram: {{user.instagram}}</h4>
+      <p>Instagram: {{user.instagram}}</p>
       {{/if}} {{#if user.twitter}}
-      <h4>Twitter: {{user.twitter}}</h4>
+      <p>Twitter: {{user.twitter}}</p>
       {{/if}} {{#if userEdit}}
       <a href="/profile/edit">Edit</a>
       {{/if}}

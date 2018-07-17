@@ -35,21 +35,6 @@ body {
   width: 30%;
 } */
 
-.all-fields {
-  display: flex;
-  flex-direction: column;
-}
-
-.input input {
-  width: 200px;
-  height: 35px;
-  border-radius: 10px;
-}
-
-.field {
-  text-align: center;
-  padding: 10px;
-}
 
 /* ----- Nav-bar ----- */
 
@@ -275,7 +260,7 @@ img {
 
 /* ---- Organisation details mobile---- */
 
-.header-details {
+.container-org-details h2 {
   text-align: center;
 }
 
@@ -301,17 +286,104 @@ img {
     margin: 0 8% 0;
     text-align: center;
     border-radius: 10px;
-    border-bottom: 2px solid black
+    margin-bottom: 40px;
+}
+
+.contact-info h4 {
+  text-align: center;
+}
+
+hr {
+  background: black;
+  width: 70%;
 }
 
 .webpage-link {
-  display: flex;
-  justify-content: center;
+  text-align: center;
 }
 
 
 
+/* ---- sign up, login and edit profile ---- */
 
+.auth-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.auth-form {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 400px;
+  width: 80%;
+  text-align: center;
+  background-color: rgb(14, 151, 151);
+  margin: 100px 20%;
+  border-radius: 15px;
+}
+.auth-form h1 {
+  font-size: 30px;
+  color: white;
+}
 
+.field {
+  width: 50%;
+  padding: 5px;
+}
 
+.field input {
+  width: 80%;
+  height: 50px;
+  border-radius: 10px;
+  text-align: left;
+  font-size: 20px;
+  padding: 5px;
+}
 
+.submit button {
+  width: 80%;
+  height: 50px;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+.checkbox {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.checkbox input {
+  height: 15px;
+}
+
+.all-fields  {
+  width: 80%;
+}
+
+.input input {
+  width: 80%;
+  padding: 5px;
+  margin-bottom: 5px;
+  border-radius: 10px;
+}
+
+/* .all-fields {
+  display: flex;
+  flex-direction: column;
+}
+
+.input input {
+  width: 200px;
+  height: 35px;
+  border-radius: 10px;
+}
+
+.field {
+  text-align: center;
+  padding: 10px;
+
+} */

@@ -1,18 +1,20 @@
-<h1>Create an account</h1>
 
-<form method="POST" action="/auth/signup">
+<div class="auth-container">
+  <form method="POST" action="/auth/signup" class="auth-form">
+    <h1>CREATE ACCOUNT</h1>
+    <div class="field">
+      {{!-- <label>Username</label> --}}
+      <input type="text" name="username" placeholder="Username" />
+    </div>
 
-  <div class="field">
-    <label>Username</label>
-    <input type="text" name="username" />
-  </div>
+    <div class="field">
+      {{!-- <label>Password</label> --}}
+      <input type="password" name="password" placeholder="Password"/>
+    </div>
 
-  <div class="field">
-    <label>Password</label>
-    <input type="password" name="password" />
-  </div>
+    <div class="field submit">
+      <button type="submit">Sign Up</button>
+    </div>
+  </form>
+</div>
 
-  <div class="field submit">
-    <button type="submit">Sign up</button>
-  </div>
-</form>
