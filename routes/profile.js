@@ -17,6 +17,9 @@ router.get('/edit', (req, res, next) => {
 
 router.post('/edit', (req, res, next) => {
   const currentUser = req.session.currentUser;
+  if (!currentUser) {
+    return res.redirect('/');
+  }
 
   const categories = [];
 
