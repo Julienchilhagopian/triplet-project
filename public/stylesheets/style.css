@@ -121,7 +121,7 @@ hr {
   text-align: center;
   align-items: center;
   color: white;
-  background-image: url(https://ichef.bbci.co.uk/news/976/cpsprodpb/D159/production/_97039535_caracas.jpg);
+  background-image: url(../images/iStock-608003210.jpg);
   height: 95vh;
   background-repeat: no-repeat;
   background-size: cover;
@@ -178,10 +178,12 @@ img {
     justify-content: space-around
   }
 
+
   /* ----- Now displaying when its website versions -----  */
   .categories-container p {
     display: unset;
   }
+
 
   .card {
     display: block;
@@ -190,46 +192,75 @@ img {
     box-shadow: 0 8px 8px rgba(0,0,0,0.15);
     padding: 10px;
     margin-bottom: 15px;
+    transition: 0.3s ease all;
   }
-  .card button {
-    background-color: Transparent;
-    background-repeat:no-repeat;
-    border: none;
-    cursor:pointer;
-    outline:none;
-  } 
-  .card:hover {
-    transform: scale(1.2);
-  }
+}
+
+
+.card button {
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  outline:none;
+} 
+.card:hover {
+  transform: scale(1.1);
+  transition: 0.3s ease all;
 }
 
 /* ---- Organisation list mobile---- */
-
-.detail-card {
-  width: 66%;
-  background: rgba(196, 191, 191, 0.329);
-  box-shadow: 0 8px 8px rgba(0,0,0,0.15);
-  padding: 10px;
-  margin-bottom: 15px;
-}
-
 .all-org-list {
   display: flex;
   flex-flow: wrap;
   justify-content: space-around;
-  background: white;
-  box-shadow: 0 8px 8px rgba(0,0,0,0.15);
   padding: 10px;
   margin-bottom: 15px;
-
-  
 }
+
+.detail-card {
+  width: 100%;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+
+.org-description {
+  position: relative;
+  width: 80%;
+  margin: -115px auto 0 auto;
+  padding: 5px 30px;
+  background-color: rgba(255, 255, 255, 0.918);
+}
+
+.detail-card img {
+  width: 100%;
+}
+
+.detail-card p {
+  margin: 30px 0;
+}
+.detail-card button {
+  text-decoration: none;
+  text-transform: uppercase; 
+  border-radius: 0;
+  border: 1px solid black;
+  padding: 8px 15px;
+  background: transparent;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.detail-card button:hover {
+  background-color: black;
+  color: white;
+}
+
+/* ---- Organisation list desktop---- */
 
 @media (min-width: 767px) {
   .detail-card {
-    width: 30%;
-    background: rgba(233, 180, 35, 0.329);
-    box-shadow: 0 8px 8px rgba(0,0,0,0.15);
+    width: 45%;
     padding: 10px;
     margin-bottom: 15px;
   }
@@ -237,60 +268,6 @@ img {
     display: flex;
     flex-flow:  column row;
     justify-content: space-around;
-    background: rgba(226, 223, 223, 0.329);
-    box-shadow: 0 8px 8px rgba(0,0,0,0.15);
-    padding: 10px;
-    margin-bottom: 15px;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media (min-width: 961px) {
-  .detail-card {
-    width: 22%;
-    background: rgba(233, 180, 35, 0.329);
-    box-shadow: 0 8px 8px rgba(0,0,0,0.15);
-    padding: 10px;
-    margin-bottom: 15px;
-  }
-  .all-org-list {
-    display: flex;
-    flex-flow:  column row;
-    justify-content: space-around;
-    background: rgba(226, 223, 223, 0.329);
-    box-shadow: 0 8px 8px rgba(0,0,0,0.15);
     padding: 10px;
     margin-bottom: 15px;
   }

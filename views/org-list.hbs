@@ -1,15 +1,19 @@
+
 <h1>Organisation list</h1>
 
 <div class="all-org-list">
     {{#each users}}
     <div class="detail-card">
-        <div class="short-details">
+       <img src="https://i1.trekearth.com/photos/1687/sunset_juangriego_2003.jpg" alt="">
+         <div class="org-description">
             <h2>{{this.username}}</h2>
             <p>{{this.description}}</p>
+        <a href="org/{{this._id}}">
+         <button>
+            See more
+         </button>
+        </a>
         </div>
-        <button>
-            <a href="org/{{this._id}}">See more</a>
-        </button>
     </div>
     {{/each}}
 </div>
