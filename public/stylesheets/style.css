@@ -69,6 +69,10 @@ body {
   border-radius: 10px;
 }
 
+.logout-btn:hover {
+  opacity: 0.9;
+}
+
 /* ----- Home page ----- */
 /* ---- Mobile version - Home - page 1 ---- */
 
@@ -90,10 +94,14 @@ hr {
   background-color: rgb(252, 106, 49);
   padding: 10px;
   border-radius: 5px;
-  border: none;
+  border: 2px solid rgb(252, 106, 49);;
   text-decoration: none;
   color: white;
   display: inline-block;
+}
+
+.titles button:hover {
+  opacity: 0.9;
 }
 
 
@@ -186,6 +194,8 @@ img {
   cursor:pointer;
   outline:none;
 } 
+.card:hover {
+  transform: scale(1.2);
 }
 
 /* ---- Organisation list mobile---- */
