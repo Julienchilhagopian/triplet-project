@@ -337,13 +337,17 @@ img {
   height: 400px;
   width: 80%;
   text-align: center;
-  background-color: rgb(14, 151, 151);
+  background-color:rgb(40, 165, 174);
   margin: 100px 20%;
   border-radius: 15px;
 }
 .auth-form h1 {
   font-size: 30px;
   color: white;
+}
+
+.edit-form {
+  height: 700px;
 }
 
 .field {
@@ -360,6 +364,10 @@ img {
   padding: 5px;
 }
 
+.submit {
+  width: 50%;
+}
+
 .submit button {
   width: 80%;
   height: 50px;
@@ -367,12 +375,19 @@ img {
   font-size: 20px;
 }
 
+.edit-field {
+  color: white;
+  margin-bottom: 10px;
+}
+
 .checkbox {
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
-.checkbox input {
+.checkbox input  {
   height: 15px;
 }
 
@@ -387,19 +402,6 @@ img {
   border-radius: 10px;
 }
 
-/* .all-fields {
-  display: flex;
-  flex-direction: column;
+.validation li {
+  background-color: red;
 }
-
-.input input {
-  width: 200px;
-  height: 35px;
-  border-radius: 10px;
-}
-
-.field {
-  text-align: center;
-  padding: 10px;
-
-} */
