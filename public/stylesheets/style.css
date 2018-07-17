@@ -177,6 +177,7 @@ img {
     flex-flow: row;
     justify-content: space-around
   }
+}
 
   /* ----- Now displaying when its website versions -----  */
   .categories-container p {
@@ -205,32 +206,58 @@ img {
 }
 
 /* ---- Organisation list mobile---- */
-
- .detail-card {
-  width: 66%;
-  background: rgba(196, 191, 191, 0.329);
-  box-shadow: 0 8px 8px rgba(0,0,0,0.15);
-  padding: 10px;
-  margin-bottom: 15px;
-}
-
 .all-org-list {
   display: flex;
   flex-flow: wrap;
   justify-content: space-around;
-  background: white;
-  box-shadow: 0 8px 8px rgba(0,0,0,0.15);
   padding: 10px;
   margin-bottom: 15px;
-
-  
 }
+
+.detail-card {
+  width: 100%;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+
+.org-description {
+  position: relative;
+  width: 80%;
+  margin: -115px auto 0 auto;
+  padding: 5px 30px;
+  background-color: rgba(255, 255, 255, 0.918);
+}
+
+.detail-card img {
+  width: 100%;
+}
+
+.detail-card p {
+  margin: 30px 0;
+}
+.detail-card button {
+  text-decoration: none;
+  text-transform: uppercase; 
+  border-radius: 0;
+  border: 1px solid black;
+  padding: 8px 15px;
+  background: transparent;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.detail-card button:hover {
+  background-color: black;
+  color: white;
+}
+
+
 
 @media (min-width: 767px) {
   .detail-card {
     width: 30%;
     background: rgba(233, 180, 35, 0.329);
-    box-shadow: 0 8px 8px rgba(0,0,0,0.15);
     padding: 10px;
     margin-bottom: 15px;
   }
@@ -239,7 +266,6 @@ img {
     flex-flow:  column row;
     justify-content: space-around;
     background: rgba(226, 223, 223, 0.329);
-    box-shadow: 0 8px 8px rgba(0,0,0,0.15);
     padding: 10px;
     margin-bottom: 15px;
   }
@@ -249,7 +275,7 @@ img {
   .detail-card {
     width: 22%;
     background: rgba(233, 180, 35, 0.329);
-    box-shadow: 0 8px 8px rgba(0,0,0,0.15);
+   
     padding: 10px;
     margin-bottom: 15px;
   }
@@ -258,7 +284,7 @@ img {
     flex-flow:  column row;
     justify-content: space-around;
     background: rgba(226, 223, 223, 0.329);
-    box-shadow: 0 8px 8px rgba(0,0,0,0.15);
+    
     padding: 10px;
     margin-bottom: 15px;
   }
