@@ -11,12 +11,17 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 .categories-container {
   margin: 0 5% 0;
 }
+
+.mobile-container {
+  margin: 0 1% 0;
+}
+
 
 /* ----- Login and Logout form ----- */
 
@@ -239,6 +244,39 @@ img {
   }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media (min-width: 961px) {
   .detail-card {
     width: 22%;
@@ -257,15 +295,21 @@ img {
     margin-bottom: 15px;
   }
 }
+
 /* ---- Organisation details mobile---- */
 
-
-
-.container-org-details {
-  margin: 0 1% 0; 
-}
 .container-org-details h2 {
   text-align: center;
+}
+
+.details-bg-image img {
+  width: 100%;
+}
+
+.org-types {
+  max-height: 15vh;
+ display: flex;
+ justify-content: center;
 }
 
 .description-card h4 {
@@ -273,19 +317,21 @@ img {
 }
 
 .description-card p {
-  background: rgba(226, 223, 223, 0.329);
+  background: rgba(226, 223, 223, 0);
     box-shadow: 0 8px 8px rgba(0,0,0,0.15);
     padding: 10px;
     margin-bottom: 15px;
     margin: 0 8% 0;
     text-align: center;
     border-radius: 10px;
+    border-bottom: 2px solid black
 }
 
 .webpage-link {
   display: flex;
   justify-content: center;
 }
+
 
 
 
