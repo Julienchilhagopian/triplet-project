@@ -116,7 +116,7 @@ hr {
   text-align: center;
   align-items: center;
   color: white;
-  background-image: url(https://ichef.bbci.co.uk/news/976/cpsprodpb/D159/production/_97039535_caracas.jpg);
+  background-image: url(../images/iStock-608003210.jpg);
   height: 95vh;
   background-repeat: no-repeat;
   background-size: cover;
@@ -190,6 +190,7 @@ img {
     box-shadow: 0 8px 8px rgba(0,0,0,0.15);
     padding: 10px;
     margin-bottom: 15px;
+    transition: 0.3s ease all;
   }
 .card button {
   background-color: Transparent;
@@ -199,7 +200,8 @@ img {
   outline:none;
 } 
 .card:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
+  transition: 0.3s ease all;
 }
 
 /* ---- Organisation list mobile---- */
