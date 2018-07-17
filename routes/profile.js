@@ -5,14 +5,14 @@ const router = express.Router();
 
 const User = require('../models/user');
 
-router.get('/', (req, res, next) => {
+router.get('/edit', (req, res, next) => {
   User.findById(req.session.currentUser._id)
     .then((user) => {
-      res.render('edit-profile', user);
+      res.render('profile-edit', user);
     });
 });
 
-router.post('/', (req, res, next) => {
+router.post('/edit', (req, res, next) => {
   const currentUser = req.session.currentUser;
 
   const categories = [];
