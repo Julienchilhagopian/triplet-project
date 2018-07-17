@@ -138,10 +138,10 @@ h1 {
 
 /* ---- Mobile version - Home - page 2 ---- */
 
-img {
-  width: 130px
-}
 
+img {
+  width: 130px;
+}
 
 .categories-container {
  display: flex;
@@ -171,6 +171,7 @@ img {
 
 .categories-container img {
   padding-top: 25px;
+  
 }
 
 /* Avoid the text to display when on mobile version */
@@ -300,10 +301,18 @@ img {
 }
 
 .org-types {
- max-height: 15vh;
+  max-height: 15vh;
+  padding-top: 10px;
  display: flex;
- justify-content: center;
+ justify-content: space-around;
+ flex-direction: row;
 }
+
+.org-types img {
+  width: 80px;
+}
+
+
 
 .description-card h4 {
   text-align: center;
@@ -311,13 +320,62 @@ img {
 
 .description-card p {
   background: rgba(226, 223, 223, 0);
-    box-shadow: 0 8px 8px rgba(0,0,0,0.15);
-    padding: 10px;
-    margin-bottom: 15px;
-    margin: 0 8% 0;
-    text-align: center;
-    border-radius: 10px;
-    border-bottom: 2px solid black
+  box-shadow: 0 8px 8px rgba(0,0,0,0.15);
+  padding: 10px;
+  margin-bottom: 15px;
+  margin: 0 8% 0;
+  text-align: center;
+  border-radius: 10px;
+  margin-bottom: 40px;
+}
+
+.contact-info h4 {
+  text-align: center;
+}
+
+hr {
+  background: black;
+  width: 70%;
+}
+
+.user-edit {
+  text-decoration: none;
+  font-size: 25px;
+}
+
+.webpage-link {
+  text-align: center;
+  padding-top: 25px;
+}
+
+.webpage-link button {
+  background-color: white;
+  border: 2px solid rgb(40, 163, 174);
+  color: rgb(40, 163, 174);
+  padding: 15px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 10px;
+}
+
+.social-media {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  padding-top: 30px;
+}
+
+.social-media img {
+  width: 50px;
+}
+
+@media (min-width: 767px) {
+  .webpage-link button:hover {
+    background-color: rgb(40, 163, 174);
+    color: white
+  }
 }
 
 /* ---- sign up, login and edit profile ---- */
@@ -404,4 +462,8 @@ img {
 
 .validation li {
   background-color: red;
+}
+
+footer {
+  background: rgb(40, 165, 174);
 }
