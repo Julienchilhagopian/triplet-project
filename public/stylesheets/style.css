@@ -282,13 +282,13 @@ img {
 
 .description-card p {
   background: rgba(226, 223, 223, 0);
-    box-shadow: 0 8px 8px rgba(0,0,0,0.15);
-    padding: 10px;
-    margin-bottom: 15px;
-    margin: 0 8% 0;
-    text-align: center;
-    border-radius: 10px;
-    margin-bottom: 40px;
+  box-shadow: 0 8px 8px rgba(0,0,0,0.15);
+  padding: 10px;
+  margin-bottom: 15px;
+  margin: 0 8% 0;
+  text-align: center;
+  border-radius: 10px;
+  margin-bottom: 40px;
 }
 
 .contact-info h4 {
@@ -300,22 +300,45 @@ hr {
   width: 70%;
 }
 
+.user-edit {
+  text-decoration: none;
+  font-size: 25px;
+}
+
 .webpage-link {
   text-align: center;
+  padding-top: 25px;
+}
+
+.webpage-link button {
+  background-color: white;
+  border: 2px solid rgb(40, 163, 174);
+  color: rgb(40, 163, 174);
+  padding: 15px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 10px;
 }
 
 .social-media {
   display: flex;
   justify-content: center;
   flex-direction: row;
-  padding-top: 50px;
+  padding-top: 30px;
 }
 
 .social-media img {
   width: 50px;
 }
 
-
+@media (min-width: 767px) {
+  .webpage-link button:hover {
+    background-color: rgb(40, 163, 174);
+    color: white
+  }
+}
 
 /* ---- sign up, login and edit profile ---- */
 
@@ -410,3 +433,7 @@ hr {
   padding: 10px;
 
 } */
+
+footer {
+  background: rgb(40, 163, 174)
+}

@@ -14,7 +14,7 @@
 
 
   <div class="description-card">
-    <h4>Description: </h4>
+    <h4>Description </h4>
     <p>{{user.description}}</p>
   </div>
 
@@ -23,21 +23,22 @@
     <h4>Contact details</h4>
     <hr>
     <div class="mail">
-      <h5>Mail</h5>
-      {{user.mail}}
+      <p>Mail: {{user.mail}}
+      </p>
     </div>
     <div class="telephone">
       {{#if user.phone}}
-      <h5>Telephone</h5>{{user.phone}} {{/if}}
+      <p>Telephone: {{user.phone}}</p> {{/if}}
     </div>
+    {{#if userEdit}}
+    <a class="user-edit" target="_blank" href="/profile/edit">Edit page</a>
+    {{/if}}
     <div class="webpage-link">
       {{#if user.website}}
       <a href="{{user.website}}" target="_blank">
-        <button>Webpage</button>
+        <button>Visit Webpage</button>
       </a>
     </div>
-    {{/if}} {{#if userEdit}}
-    <a class="user-edit" target="_blank" href="/profile/edit">Edit</a>
     {{/if}}
     <div class="social-media">
       <div class="facebook">
