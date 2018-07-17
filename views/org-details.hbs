@@ -1,35 +1,43 @@
-<h1>Organisation details</h1>
+<h2>
+  {{user.username}}</h2>
+<div class="details-bg-image">
+  <img src="https://www.brookings.edu/wp-content/uploads/2017/04/venezuela_protest_flag001-e1491425661760.jpg" alt="">
+</div>
+<div class="container-org-details mobile-container">
+  <div class="org-types">
+    {{#each user.categories}}
+    <a href="/org?category={{this}}">
+      <img src="/images/{{this}}.svg" /> {{/each}}
+    </a>
+  </div>
 
-<div>
-  <div>
-    <h2>Organisation name: {{user.username}}</h2>
 
-    <h4>Type of organisation: {{user.categories}} </h4>
+  <div class="description-card">
+    <h4>Description: </h4>
+    <p>{{user.description}}</p>
+  </div>
 
-    <h4>Description: {{user.description}}</h4>
-
+  <div class="additional-info">
     <h4>Mail: {{user.mail}}</h4>
 
     {{#if user.phone}}
     <h4>Phone: {{user.phone}}</h4>
-    {{/if}} 
-
-    {{#if user.facebook}}
-    <h4>Facebook: {{user.facebook}}</h4>
-    {{/if}} 
-
-    {{#if user.instagram}}
-    <h4>Instagram: {{user.instagram}}</h4>
-    {{/if}} 
-    
-    {{#if user.twitter}}
-    <h4>Twitter: {{user.twitter}}</h4>
-    {{/if}} 
-
-    {{#if userEdit}}
-    <a href="/profile/edit">Edit</a>
     {{/if}}
-
-    <a href="{{user.website}}" target="_blank"> click here to see the Web page</a>
+    <div class="social-media">
+      {{#if user.facebook}}
+      <h4>Facebook: {{user.facebook}}</h4>
+      {{/if}} {{#if user.instagram}}
+      <h4>Instagram: {{user.instagram}}</h4>
+      {{/if}} {{#if user.twitter}}
+      <h4>Twitter: {{user.twitter}}</h4>
+      {{/if}} {{#if userEdit}}
+      <a href="/profile/edit">Edit</a>
+      {{/if}}
+      <div class="webpage-link">
+        <a href="{{user.website}}" target="_blank">
+          <button>Webpage</button>
+        </a>
+      </div>
+    </div>
   </div>
 </div>

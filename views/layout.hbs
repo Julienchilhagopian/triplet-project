@@ -2,14 +2,16 @@
 <html>
 
 <head>
-  <title>{{title}}</title>
-  <link rel='stylesheet' href='/stylesheets/style.css'/>
+  <title>Help VZLA</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 
 <body>
   <div class "container">
     <header>
-
       {{#if currentUser}}
       <nav class="nav-logout">
         <p>Logged in as {{currentUser.username}}</p>
@@ -17,7 +19,7 @@
           <button class="logout-btn">log out</button>
         </form>
 
-         <form method="GET" action="/org/{{currentUser._id}}">
+        <form method="GET" action="/org/{{currentUser._id}}">
           <button class="logout-btn">Profile</button>
         </form>
       </nav>
