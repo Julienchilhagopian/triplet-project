@@ -41,6 +41,9 @@ router.post('/edit', (req, res, next) => {
     phone: req.body.phone,
     mail: req.body.mail,
     website: req.body.website,
+    facebook: req.body.facebook,
+    instagram: req.body.instagram,
+    twitter: req.body.twitter,
     categories: categories
   };
 
