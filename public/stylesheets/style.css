@@ -167,11 +167,6 @@ img {
     margin-bottom: 20px;
   }
 
-  h2 {
-    display: block;
-    font-size: 20px;
-  }
-
   .categories-container {
     display: flex;
     flex-flow: row;
@@ -191,20 +186,21 @@ img {
     padding: 10px;
     margin-bottom: 15px;
   }
-.card button {
-  background-color: Transparent;
-  background-repeat:no-repeat;
-  border: none;
-  cursor:pointer;
-  outline:none;
-} 
-.card:hover {
-  transform: scale(1.2);
+  .card button {
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    outline:none;
+  } 
+  .card:hover {
+    transform: scale(1.2);
+  }
 }
 
 /* ---- Organisation list mobile---- */
 
- .detail-card {
+.detail-card {
   width: 66%;
   background: rgba(196, 191, 191, 0.329);
   box-shadow: 0 8px 8px rgba(0,0,0,0.15);
@@ -261,4 +257,38 @@ img {
     margin-bottom: 15px;
   }
 }
+/* ---- Organisation details mobile---- */
+
+
+
+.container-org-details {
+  margin: 0 1% 0; 
+}
+.container-org-details h2 {
+  text-align: center;
+}
+
+.description-card h4 {
+  text-align: center;
+}
+
+.description-card p {
+  background: rgba(226, 223, 223, 0.329);
+    box-shadow: 0 8px 8px rgba(0,0,0,0.15);
+    padding: 10px;
+    margin-bottom: 15px;
+    margin: 0 8% 0;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.webpage-link {
+  display: flex;
+  justify-content: center;
+}
+
+
+
+
+
 
