@@ -35,23 +35,33 @@ body {
   width: 30%;
 } */
 
-.all-fields {
-  display: flex;
-  flex-direction: column;
+
+/* ----- Nav-bar when user IS NOT logged in ----- */
+
+.nav-not-logged {
+ height: 60px;
+ background-color: rgb(40, 165, 174);
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
 }
 
-.input input {
-  width: 200px;
-  height: 35px;
-  border-radius: 10px;
+.nav-not-logged a {
+  text-decoration: none;
+  color: white;
 }
 
-.field {
-  text-align: center;
-  padding: 10px;
+
+
+.nav-not-logged a {
+padding: 0 10px;
 }
 
-/* ----- Nav-bar ----- */
+.logo {
+  font-size: 25px;
+}
+
+/* ----- Nav-bar when user IS logged in ----- */
 
 .nav-logout {
   display: flex;
@@ -59,10 +69,6 @@ body {
   margin-top: 17px;
 }
 
-.nav-not-logged{
- text-align: right;
- margin-top: 45px;
-}
 
 /* Log out button */
 
@@ -98,10 +104,10 @@ h1 {
 
 .titles button {
   font-size: 15px;
-  background-color: rgb(252, 106, 49);
-  padding: 10px;
+  background-color: rgb(248, 195, 46);
+  padding: 20px 30px;
   border-radius: 5px;
-  border: 2px solid rgb(252, 106, 49);;
+  border: 2px solid rgb(248, 195, 46);
   text-decoration: none;
   color: white;
   display: inline-block;
@@ -128,7 +134,7 @@ h1 {
 /* ---- Mobile version - Home - page 2 ---- */
 
 img {
-  width: 100px
+  width: 120px
 }
 
 .categories-container {
@@ -188,7 +194,7 @@ img {
   .card {
     display: block;
     width: 28%;
-    background: rgba(160, 157, 157, 0.329);
+    background: rgba(40, 165, 174, 0.411);
     box-shadow: 0 8px 8px rgba(0,0,0,0.15);
     padding: 10px;
     margin-bottom: 15px;
@@ -284,7 +290,7 @@ img {
 }
 
 .org-types {
-  max-height: 15vh;
+ max-height: 15vh;
  display: flex;
  justify-content: center;
 }
@@ -304,14 +310,86 @@ img {
     border-bottom: 2px solid black
 }
 
-.webpage-link {
+/* ---- sign up, login and edit profile ---- */
+
+.auth-container {
+  height: 100vh;
   display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.auth-form {
+  display: flex;
+  flex-flow: column;
   justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 400px;
+  width: 80%;
+  text-align: center;
+  background-color: rgb(14, 151, 151);
+  margin: 100px 20%;
+  border-radius: 15px;
+}
+.auth-form h1 {
+  font-size: 30px;
+  color: white;
 }
 
+.field {
+  width: 50%;
+  padding: 5px;
+}
 
+.field input {
+  width: 80%;
+  height: 50px;
+  border-radius: 10px;
+  text-align: left;
+  font-size: 20px;
+  padding: 5px;
+}
 
+.submit button {
+  width: 80%;
+  height: 50px;
+  border-radius: 10px;
+  font-size: 20px;
+}
 
+.checkbox {
+  display: flex;
+  justify-content: space-evenly;
+}
 
+.checkbox input {
+  height: 15px;
+}
 
+.all-fields  {
+  width: 80%;
+}
 
+.input input {
+  width: 80%;
+  padding: 5px;
+  margin-bottom: 5px;
+  border-radius: 10px;
+}
+
+/* .all-fields {
+  display: flex;
+  flex-direction: column;
+}
+
+.input input {
+  width: 200px;
+  height: 35px;
+  border-radius: 10px;
+}
+
+.field {
+  text-align: center;
+  padding: 10px;
+
+} */

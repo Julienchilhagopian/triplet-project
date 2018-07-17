@@ -24,14 +24,20 @@
         </form>
       </nav>
       {{else}}
+      <section>
       <nav class="nav-not-logged">
+        <div>
+        <a href="/" class="logo">Helpvzla.com</a>
         <a href="/org?category=food">Food</a>
         <a href="/org?category=medicine">Medicine</a>
         <a href="/org?category=education">Education</a>
+        </div>
+        <div>
         <a href="/auth/signup">Sign up</a>
-        |
         <a href="/auth/login">Login</a>
+        </div>
       </nav>
+      </section>
       {{/if}}
     </header>
   </div>

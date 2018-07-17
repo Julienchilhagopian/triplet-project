@@ -1,56 +1,61 @@
+<div class="auth-container">
+<form method="POST" action="/profile/edit" class="auth-form">
 <h1>Edit Profile</h1>
-
-<form method="POST" action="/profile/edit">
   <div class="all-fields">
-    <div class="field">
+    <div class="edit-field">
       <div class="input">
-        <label>Organisation name</label>
-        <input type="text" name="username" value="{{this.username}}" />
+        {{!-- <label>Organisation name</label> --}}
+        <input type="text" name="username" value="{{this.username}}" placeholder="Username" />
       </div>
     </div>
 
-    <div class="field">
+    <div class="edit-field">
       <div class="input">
-      <label>Description</label>
-        <input type="text" name="description" value="{{this.description}}" />
+      {{!-- <label>Description</label> --}}
+        <input type="text" name="description" value="{{this.description}}" placeholder="Description"/>
       </div>
     </div>
 
-    <div class="field">
+    <div class="edit-field">
       <div class="input">
-      <label>Phone number</label>
-        <input type="text" name="phone" value="{{this.phone}}" />
+      {{!-- <label>Phone number</label> --}}
+        <input type="text" name="phone" value="{{this.phone}}" placeholder="Phone" />
       </div>
     </div>
 
-    <div class="field">
+    <div class="edit-field">
       <div class="input">
-      <label>Mail</label>
-        <input type="email" name="mail" value="{{this.mail}}" />
+      {{!-- <label>Mail</label> --}}
+        <input type="email" name="mail" value="{{this.mail}}" placeholder="Email"/>
       </div>
     </div>
 
-    <div class="field">
+    <div class="edit-field">
       <div class="input">
-      <label>Website</label>
-        <input type="text" name="website" value="{{this.website}}" />
+      {{!-- <label>Website</label> --}}
+        <input type="text" name="website" value="{{this.website}}" placeholder="Website"/>
       </div>
     </div>
   </div>
 
-  <div class="field checkbox">
+  <div class="edit-field checkbox">
     <p>Type of organisation</p>
-    <label>Medicine</label>
-    <input type="checkbox" name="medicine" />
-    <label>Food</label>
-    <input type="checkbox" name="food" />
-    <label>Education</label>
-    <input type="checkbox" name="education" />
+    <div>
+      <label>Medicine</label>
+      <input type="checkbox" name="medicine" />
+    </div>
+    <div>
+      <label>Food</label>
+      <input type="checkbox" name="food" />
+    </div>
+    <div>
+      <label>Education</label>
+      <input type="checkbox" name="education" />
+    </div>
   </div>
 
-
-
-  <div class="field submit">
+  <div class="edit-field submit">
     <button type="submit">Save</button>
   </div>
 </form>
+</div>
