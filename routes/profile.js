@@ -9,18 +9,28 @@ router.get('/edit', (req, res, next) => {
   if (!req.session.currentUser) {
     return res.redirect('/');
   }
+
   User.findById(req.session.currentUser._id)
     .then((user) => {
-      res.render('profile-edit', user);
+      const data = {
+        messages: req.flash('edit-profile-error'),
+        user: user
+      };
+      res.render('profile-edit', data);
     });
 });
 
 router.post('/edit', (req, res, next) => {
   const currentUser = req.session.currentUser;
+
   if (!currentUser) {
     return res.redirect('/');
   }
 
+  if (!req.body.description && !req.body.mail && (!req.body.medicine || !req.body.food || !req.body.education)) {
+    req.flash('edit-profile-error', 'Description, email and type of organisation are required');
+    return res.redirect('/profile/edit');
+  }
   const categories = [];
 
   if (req.body.medicine) {
@@ -55,14 +65,5 @@ router.post('/edit', (req, res, next) => {
       res.redirect('/');
     });
 });
-
-// // post /edit-profile
-// // PRERTMISSIONS?
-// // VALIDATE Post body
-//   User.findOneAndUpdate({_id: the id of the cuurent user}, UPDATEDATA)
-//     .then((updatedUser) = { // HOW TO UPDATE AND RETURN UPDATED DOCUMENT
-//       req.session.currentUser = updaTEDuSER
-
-//     })
 
 module.exports = router;

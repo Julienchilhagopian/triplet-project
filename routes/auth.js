@@ -14,8 +14,10 @@ router.get('/signup', (req, res, next) => {
     res.redirect('/');
     return;
   }
-
-  res.render('auth/signup');
+  const data = {
+    messages: req.flash('signup-error')
+  };
+  res.render('auth/signup', data);
 });
 
 router.post('/signup', (req, res, next) => {
@@ -24,7 +26,7 @@ router.post('/signup', (req, res, next) => {
     return;
   }
   if (!req.body.username || !req.body.password) {
-    // message please provide a username and password
+    req.flash('signup-error', 'Please provide an username and password');
     res.redirect('/auth/signup');
     return;
   }
@@ -60,11 +62,11 @@ router.get('/login', (req, res, next) => {
     return;
   }
   // For later maybe use ajax
-  // const data = {
-  //   messages: req.flash('login-error')
-  // };
+  const data = {
+    messages: req.flash('login-error')
+  };
 
-  res.render('auth/login');
+  res.render('auth/login', data);
 });
 
 router.post('/login', (req, res, next) => {
@@ -73,19 +75,19 @@ router.post('/login', (req, res, next) => {
     return;
   }
   if (!req.body.username || !req.body.password) {
-    // flash here
+    req.flash('login-error', 'Please provide an username and password');
     res.redirect('/auth/login');
     return;
   }
   User.findOne({ username: req.body.username })
     .then((user) => {
       if (!user) {
-        // flash here
+        req.flash('login-error', 'Incorrect username');
         res.redirect('/auth/login');
         return;
       }
       if (!bcrypt.compareSync(req.body.password, user.password)) {
-        // flash here
+        req.flash('login-error', 'Incorrect password');
         res.redirect('/auth/login');
         return;
       }

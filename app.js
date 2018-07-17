@@ -1,7 +1,7 @@
 'use strict';
 
 // --------- App init --------- //
-
+const flash = require('connect-flash');
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
@@ -40,6 +40,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(flash());
 
 // --------- session --------- //
 app.use(session({

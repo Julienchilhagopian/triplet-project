@@ -303,7 +303,7 @@ img {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  height: 500px;
+  height: 400px;
   width: 80%;
   text-align: center;
   background-color: rgb(14, 151, 151);
@@ -313,6 +313,10 @@ img {
 .auth-form h1 {
   font-size: 30px;
   color: white;
+}
+
+.edit-form {
+  height: 700px;
 }
 
 .field {
@@ -342,6 +346,7 @@ img {
 
 .edit-field {
   color: white;
+  margin-bottom: 10px;
 }
 
 .checkbox {
