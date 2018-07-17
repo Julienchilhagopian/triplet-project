@@ -3,7 +3,7 @@
 
 <head>
   <title>{{title}}</title>
-  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel='stylesheet' href='/stylesheets/style.css'/>
 </head>
 
 <body>
@@ -16,9 +16,16 @@
         <form method="POST" action="/auth/logout">
           <button class="logout-btn">log out</button>
         </form>
+
+         <form method="GET" action="/org/{{currentUser._id}}">
+          <button class="logout-btn">Profile</button>
+        </form>
       </nav>
       {{else}}
       <nav class="nav-not-logged">
+        <a href="/org?category=food">Food</a>
+        <a href="/org?category=medicine">Medicine</a>
+        <a href="/org?category=education">Education</a>
         <a href="/auth/signup">Sign up</a>
         |
         <a href="/auth/login">Login</a>

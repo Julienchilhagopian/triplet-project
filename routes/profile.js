@@ -5,15 +5,21 @@ const router = express.Router();
 
 const User = require('../models/user');
 
-router.get('/', (req, res, next) => {
+router.get('/edit', (req, res, next) => {
+  if (!req.session.currentUser) {
+    return res.redirect('/');
+  }
   User.findById(req.session.currentUser._id)
     .then((user) => {
-      res.render('edit-profile', user);
+      res.render('profile-edit', user);
     });
 });
 
-router.post('/', (req, res, next) => {
+router.post('/edit', (req, res, next) => {
   const currentUser = req.session.currentUser;
+  if (!currentUser) {
+    return res.redirect('/');
+  }
 
   const categories = [];
 
@@ -30,6 +36,7 @@ router.post('/', (req, res, next) => {
   }
 
   const data = {
+    username: req.body.username,
     description: req.body.description,
     phone: req.body.phone,
     mail: req.body.mail,
@@ -37,8 +44,11 @@ router.post('/', (req, res, next) => {
     categories: categories
   };
 
-  User.findByIdAndUpdate(currentUser._id, data)
-    .then(() => {
+  const options = {new: true};
+
+  User.findByIdAndUpdate(currentUser._id, data, options)
+    .then((user) => {
+      req.session.currentUser = user;
       res.redirect('/');
     });
 });
