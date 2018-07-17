@@ -16,6 +16,10 @@
         <form method="POST" action="/auth/logout">
           <button class="logout-btn">log out</button>
         </form>
+
+         <form method="GET" action="/org/{{currentUser._id}}">
+          <button class="logout-btn">Profile</button>
+        </form>
       </nav>
       {{else}}
       <nav class="nav-not-logged">
