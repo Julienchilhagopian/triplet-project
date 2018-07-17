@@ -2,7 +2,7 @@
   <h2>
     {{user.username}}</h2>
   <div class="details-bg-image">
-    <img src="https://www.brookings.edu/wp-content/uploads/2017/04/venezuela_protest_flag001-e1491425661760.jpg" alt="">
+    <img src="https://contratar-seguro.com/wp-content/uploads/2017/09/seguro-viaje-venezuela.jpg" alt="">
   </div>
 
   <div class="org-types">
@@ -22,26 +22,49 @@
 
     <h4>Contact details</h4>
     <hr>
-    <p>Mail: {{user.mail}}</p>
-
-    {{#if user.phone}}
-    <p>Phone: {{user.phone}}</p>
+    <div class="mail">
+      <h5>Mail</h5>
+      {{user.mail}}
+    </div>
+    <div class="telephone">
+      {{#if user.phone}}
+      <h5>Telephone</h5>{{user.phone}} {{/if}}
+    </div>
+    <div class="webpage-link">
+      {{#if user.website}}
+      <a href="{{user.website}}" target="_blank">
+        <button>Webpage</button>
+      </a>
+    </div>
+    {{/if}} {{#if userEdit}}
+    <a class="user-edit" target="_blank" href="/profile/edit">Edit</a>
     {{/if}}
     <div class="social-media">
-      {{#if user.facebook}}
-      <p>Facebook: {{user.facebook}}</p>
-      {{/if}} {{#if user.instagram}}
-      <p>Instagram: {{user.instagram}}</p>
-      {{/if}} {{#if user.twitter}}
-      <p>Twitter: {{user.twitter}}</p>
-      {{/if}} {{#if userEdit}}
-      <a href="/profile/edit">Edit</a>
-      {{/if}}
-      <div class="webpage-link">
-        <a href="{{user.website}}" target="_blank">
-          <button>Webpage</button>
+      <div class="facebook">
+        {{#if user.facebook}}
+        <a href="{{user.facebook}}">
+          <img src="https://cdn4.iconfinder.com/data/icons/social-media-icons-the-circle-set/48/facebook_circle-512.png" alt="Facebook">
         </a>
+        {{/if}}
+      </div>
+      <div class="instagram">
+        {{#if user.instagram}}
+        <a target="_blank" href="{{user.instagram}}">
+          <img src="https://seeklogo.com/images/I/instagram-circle-logo-E285122AB7-seeklogo.com.png" alt="Instagram">
+        </a>
+        {{/if}}
+      </div>
+      <div class="twitter">
+        {{#if user.twitter}}
+        <a target="_blank" href="{{user.twitter}}">
+          <img src="http://goinkscape.com/wp-content/uploads/2015/07/twitter-logo-final.png" alt="Twitter">
+        </a>
+        {{/if}}
       </div>
     </div>
+
+
+
+
   </div>
 </div>

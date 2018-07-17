@@ -270,8 +270,10 @@ img {
 
 .org-types {
   max-height: 15vh;
+  padding-top: 10px;
  display: flex;
- justify-content: center;
+ justify-content: space-around;
+ flex-direction: row;
 }
 
 .description-card h4 {
@@ -302,6 +304,17 @@ hr {
   text-align: center;
 }
 
+.social-media {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  padding-top: 50px;
+}
+
+.social-media img {
+  width: 50px;
+}
+
 
 
 /* ---- sign up, login and edit profile ---- */
@@ -318,7 +331,7 @@ hr {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  height: 400px;
+  height: 500px;
   width: 80%;
   text-align: center;
   background-color: rgb(14, 151, 151);
@@ -344,6 +357,10 @@ hr {
   padding: 5px;
 }
 
+.submit {
+  width: 50%;
+}
+
 .submit button {
   width: 80%;
   height: 50px;
@@ -351,12 +368,18 @@ hr {
   font-size: 20px;
 }
 
+.edit-field {
+  color: white;
+}
+
 .checkbox {
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
-.checkbox input {
+.checkbox input  {
   height: 15px;
 }
 
