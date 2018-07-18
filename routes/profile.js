@@ -27,10 +27,19 @@ router.post('/edit', (req, res, next) => {
     return res.redirect('/');
   }
 
-  if (!req.body.description || !req.body.mail) {
-    req.flash('edit-profile-error', 'Description, email and type of organisation are required');
+  if (!req.body.description) {
+    req.flash('edit-profile-error', 'Description is required');
     return res.redirect('/profile/edit');
   }
+  if (!req.body.mail) {
+    req.flash('edit-profile-error', 'Email is required');
+    return res.redirect('/profile/edit');
+  }
+  if (!req.body.medicine && !req.body.food && !req.body.education) {
+    req.flash('edit-profile-error', 'Please select at least one type of organisation');
+    return res.redirect('/profile/edit');
+  }
+  console.log(req.body);
   const categories = [];
 
   if (req.body.medicine) {
