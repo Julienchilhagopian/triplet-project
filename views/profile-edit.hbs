@@ -12,7 +12,7 @@
       <div class="edit-field">
         <div class="input">
           <label>Description</label>
-          <textarea name="description" value="{{user.description}}" placeholder="Write something about your organisation..."></textarea>
+          <textarea name="description" placeholder="Write something about your organisation...">{{user.description}}</textarea>
         </div>
       </div>
 
@@ -65,15 +65,15 @@
         <div class="checkbox">
           <div>
             <label>Medicine</label>
-            <input type="checkbox" name="medicine" />
+            <input type="checkbox" name="medicine" {{#if hasCategoryMedicine}} checked {{/if}}/>
           </div>
           <div>
             <label>Food</label>
-            <input type="checkbox" name="food" />
+            <input type="checkbox" name="food" {{#if hasCategoryEducation}} checked {{/if}}/>
           </div>
           <div>
             <label>Education</label>
-            <input type="checkbox" name="education" />
+            <input type="checkbox" name="education" {{#if hasCategoryFood}} checked {{/if}}/>
           </div>
         </div>
       </div>

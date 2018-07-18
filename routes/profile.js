@@ -12,9 +12,28 @@ router.get('/edit', (req, res, next) => {
 
   User.findById(req.session.currentUser._id)
     .then((user) => {
+      let hasCategoryMedicine;
+      let hasCategoryFood;
+      let hasCategoryEducation;
+
+      if (user.categories.includes('medicine')) {
+        hasCategoryMedicine = true;
+      }
+
+      if (user.categories.includes('food')) {
+        hasCategoryFood = true;
+      }
+
+      if (user.categories.includes('education')) {
+        hasCategoryEducation = true;
+      }
+
       const data = {
         messages: req.flash('edit-profile-error'),
-        user: user
+        user: user,
+        hasCategoryMedicine: hasCategoryMedicine,
+        hasCategoryFood: hasCategoryFood,
+        hasCategoryEducation: hasCategoryEducation
       };
       res.render('profile-edit', data);
     });
@@ -31,15 +50,17 @@ router.post('/edit', (req, res, next) => {
     req.flash('edit-profile-error', 'Description is required');
     return res.redirect('/profile/edit');
   }
+
   if (!req.body.mail) {
     req.flash('edit-profile-error', 'Email is required');
     return res.redirect('/profile/edit');
   }
+
   if (!req.body.medicine && !req.body.food && !req.body.education) {
     req.flash('edit-profile-error', 'Please select at least one type of organisation');
     return res.redirect('/profile/edit');
   }
-  console.log(req.body);
+
   const categories = [];
 
   if (req.body.medicine) {
@@ -71,6 +92,26 @@ router.post('/edit', (req, res, next) => {
   User.findByIdAndUpdate(currentUser._id, data, options)
     .then((user) => {
       req.session.currentUser = user;
+      // MAILER
+
+      let { email, subject, message } = req.body;
+      let transporter = nodemailer.createTransport({
+        service: 'Gmail',
+        auth: {
+          user: 'your email address',
+          pass: 'your email password'
+        }
+      });
+      transporter.sendMail({
+        from: '"My Awesome Project 👻" <myawesome@project.com>',
+        to: email,
+        subject: subject,
+        text: message,
+        html: `<b>${message}</b>`
+      })
+        .then(info => res.render('message', {email, subject, message, info}))
+        .catch(error => console.log(error));
+
       res.redirect('/');
     });
 });
