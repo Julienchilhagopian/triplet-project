@@ -4,6 +4,7 @@ const express = require('express');
 const router = express.Router();
 
 const User = require('../models/user');
+const upload = require('../middlewares/upload');
 
 router.get('/edit', (req, res, next) => {
   if (!req.session.currentUser) {
@@ -64,6 +65,92 @@ router.post('/edit', (req, res, next) => {
       req.session.currentUser = user;
       res.redirect('/');
     });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+router.get('/edit/org-picture', (req, res, next) => {
+  return res.render('orgpic');
+});
+
+router.post('/edit/org-picture', upload.single('photo'), (req, res, next) => {
+  const currentUser = req.session.currentUser;
+
+  if (!req.file) {
+    return res.redirect('/profile/edit');
+  }
+  const imgUrl = req.file.url;
+
+  const data = {
+    $set: {
+      imgUrl: imgUrl
+    }
+  };
+
+  const options = {new: true};
+
+  User.findByIdAndUpdate(currentUser._id, data, options)
+    .then((user) => {
+      req.session.currentUser = user;
+      res.redirect('/');
+    })
+    .catch(next);
 });
 
 module.exports = router;

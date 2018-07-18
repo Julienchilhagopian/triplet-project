@@ -10,6 +10,7 @@ const logger = require('morgan');
 const mongoose = require('mongoose');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
+const cloudinary = require('cloudinary');
 
 // --------- Require routes --------- //
 
@@ -62,6 +63,14 @@ app.use(session({
 app.use((req, res, next) => {
   app.locals.currentUser = req.session.currentUser; // this create a local variable.
   next();
+});
+
+// --------- Cloudinary set up --------- //
+
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_NAME,
+  api_key: process.env.CLOUDINARY_KEY,
+  api_secret: process.env.CLOUDINARY_SECRET
 });
 
 // --------- Setup routes --------- //
