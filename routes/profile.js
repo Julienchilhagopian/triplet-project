@@ -2,6 +2,7 @@
 
 const express = require('express');
 const router = express.Router();
+const nodemailer = require('nodemailer');
 
 const User = require('../models/user');
 
@@ -94,24 +95,27 @@ router.post('/edit', (req, res, next) => {
       req.session.currentUser = user;
       // MAILER
 
-      let { email, subject, message } = req.body;
       let transporter = nodemailer.createTransport({
         service: 'Gmail',
         auth: {
-          user: 'your email address',
-          pass: 'your email password'
+          user: 'helpvzlaproject@gmail.com',
+          pass: 'tripletsproject'
         }
       });
       transporter.sendMail({
-        from: '"My Awesome Project 👻" <myawesome@project.com>',
-        to: email,
-        subject: subject,
-        text: message,
-        html: `<b>${message}</b>`
-      })
-        .then(info => res.render('message', {email, subject, message, info}))
-        .catch(error => console.log(error));
-
+        from: '"HelpVzla" <helpvzlaproject@gmail.com>',
+        to: data.mail,
+        subject: 'Thank you for signing up in HelpVzla',
+        text: 'We will verify your account and activate it in 48 hours',
+        html: `<b>We will verify your account and activate it in 48 hours</b>`
+      });
+      transporter.sendMail({
+        from: data.mail,
+        to: '"HelpVzla" <helpvzlaproject@gmail.com>',
+        subject: 'A new organisation has signed up in HelpVzla',
+        text: 'The account should be verified and activated in 48 hours',
+        html: `<b>The account should be verified and activated in 48 hours</b>`
+      });
       res.redirect('/');
     });
 });
