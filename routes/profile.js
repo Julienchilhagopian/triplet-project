@@ -27,7 +27,7 @@ router.post('/edit', (req, res, next) => {
     return res.redirect('/');
   }
 
-  if (!req.body.description || !req.body.mail || !req.body.medicine || !req.body.food || !req.body.education) {
+  if (!req.body.description || !req.body.mail) {
     req.flash('edit-profile-error', 'Description, email and type of organisation are required');
     return res.redirect('/profile/edit');
   }
