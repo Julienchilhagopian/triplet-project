@@ -20,98 +20,35 @@ body {
 }
 
 
-/* ----- Login and Logout form ----- */
+/* ----- Nav-bar ----- */
 
-/* .account {
- 
-
-  background: rgb(250, 255, 239);
-  box-shadow: 0 8px 8px rgba(0,0,0,0.15);
-  padding: 10px;
-  margin-bottom: 15px;
-  width: 30%;
-} */
-
-
-/* ----- Nav-bar for all users ----- */
-
-.nav-not-logged {
-  height: 60px;
-  background-color: rgb(40, 165, 174);
+.nav-container {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-
- }
- 
- .nav-not-logged a {
-   text-decoration: none;
-   padding: 0 10px;
-   color: white;
- }
- 
- .logo {
-   font-size: 15px;
-   font-weight: bold;
-   margin-left: 10px;
- }
-
- .logo-div {
-   width: 40%;
- }
- 
- .nav-not-logged-links {
-  display: flex;
   align-items: center;
- }
+  height: 60px;
+}
 
- @media (min-width: 767px) {
-  .logo {
-    font-size: 30px;
-  }
+.nav-container a {
+  text-decoration: none;
+  color: rgb(40, 163, 174);
+  padding: 0 8px; 
+  font-weight: 500;
+}
+ 
+ 
+ 
 
-  .logo-div {
-    width: 70%;
-  }
-
- }
+ 
 
 /* ----- Nav-bar Buttons ----- */
 
-.nav-logged-in-btn {
-  background-color: transparent;  
-  border: none;
-  color: white;
-  padding: 8px 15px;
-  margin: 0 5px;
-  text-align: center;
-  text-decoration: none;
-  font-size: 13px;
-  border-radius: 5px;
-}
 
-.logout-btn {
-  border: 1px solid tomato;
-}
-.logout-btn:hover {
-  background-color: tomato; 
-  color: white;
-}
 
-.loggin-btn {
-  border: 1px solid rgb(248, 195, 46);
-}
-.loggin-btn:hover {
-  background-color: rgb(248, 195, 46); 
-  color: white;
-}
 
-@media (min-width: 767px) {
-  .nav-logged-in-btn {
-    font-size: 20px;
-  }
 
- }
+
+
 
 /* ----- Home page ----- */
 /* ---- Mobile version - Home - page 1 ---- */
