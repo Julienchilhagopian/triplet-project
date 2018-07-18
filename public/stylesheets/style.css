@@ -47,12 +47,17 @@ body {
  .nav-not-logged a {
    text-decoration: none;
    color: white;
+   padding: 0 10px;
  }
  
  .logo {
    font-size: 15px;
    font-weight: bold;
    margin-left: 10px;
+ }
+
+ .logo-div {
+   width: 40%;
  }
  
  .nav-not-logged-links {
@@ -63,6 +68,10 @@ body {
  @media (min-width: 767px) {
   .logo {
     font-size: 30px;
+  }
+
+  .logo-div {
+    width: 70%;
   }
 
  }
