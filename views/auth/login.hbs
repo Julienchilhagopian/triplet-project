@@ -15,9 +15,9 @@
     <div class="field submit">
       <button type="submit">Login</button>
       {{#if messages.length}}
-        <ul class="validation">
-          {{#each messages}}<li>{{this}}</li>{{/each}}
-        </ul>
+        <div class="validation">
+          {{#each messages}}{{this}}{{/each}}
+        </div>
       {{/if}}
     </div>
   </form>

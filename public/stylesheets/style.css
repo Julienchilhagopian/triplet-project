@@ -379,7 +379,11 @@ hr {
 }
 
 /* ---- sign up, login and edit profile ---- */
-
+.edit-container{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
 .auth-container {
   height: 100vh;
   display: flex;
@@ -387,29 +391,28 @@ hr {
   justify-content: space-around;
 }
 .auth-form {
+  border-radius: 6px;
   display: flex;
   flex-flow: column;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  height: 400px;
-  width: 80%;
+  width: 95%;
   text-align: center;
-  background-color:rgb(40, 165, 174);
-  margin: 100px 20%;
-  border-radius: 15px;
+  background-color:#4fcec7;
 }
+
 .auth-form h1 {
   font-size: 30px;
-  color: white;
+  color:#ffffff;
 }
 
 .edit-form {
-  height: 700px;
+  height: auto;
 }
 
 .field {
-  width: 50%;
+  width: 100%;
   padding: 5px;
 }
 
@@ -423,18 +426,19 @@ hr {
 }
 
 .submit {
-  width: 50%;
+  width: 100%;
+  margin-bottom: 50px;
 }
 
 .submit button {
-  width: 80%;
+  width: 50%;
   height: 50px;
   border-radius: 10px;
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .edit-field {
-  color: white;
+  color:#ffffff;
   margin-bottom: 10px;
 }
 
@@ -445,24 +449,55 @@ hr {
   margin-bottom: 20px;
 }
 
-.checkbox input  {
+.checkbox input {
   height: 15px;
 }
 
-.all-fields  {
+.all-fields {
   width: 80%;
 }
 
-.input input {
-  width: 80%;
+.input{
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+}
+
+.input label{
+  text-align: left;
+}
+
+.input input, textarea {
+  width: 100%;
   padding: 5px;
   margin-bottom: 5px;
   border-radius: 10px;
 }
 
-.validation li {
-  background-color: red;
+.input textarea{
+  min-height: 80px;
 }
+
+.validation {
+  background-color:#f72100;
+  padding: 20px;
+  color:#ffffff;
+  margin-top: 20px;
+}
+
+@media (min-width: 767px) {
+  .auth-form{
+    width: 80%;
+    margin: 100px 20%;
+    border-radius: 15px;
+  }
+  
+  .field {
+    width: 50%;
+  }
+}
+
+/* ---- footer ---- */ 
 
 footer {
   background: rgb(40, 165, 174);

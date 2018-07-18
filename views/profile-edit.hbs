@@ -1,89 +1,92 @@
-<div class="auth-container">
-<form method="POST" action="/profile/edit" class="auth-form edit-form">
-<h1>Edit Profile</h1>
-  <div class="all-fields">
-    <div class="edit-field">
-      <div class="input">
-        {{!-- <label>Organisation name</label> --}}
-        <input type="text" name="username" value="{{user.username}}" placeholder="Username" />
+<div class="edit-container">
+  <form method="POST" action="/profile/edit" class="auth-form edit-form">
+    <h1>Edit Profile</h1>
+    <div class="all-fields">
+      <div class="edit-field">
+        <div class="input">
+          <label>Organisation name</label>
+          <input type="text" name="username" value="{{user.username}}" placeholder="The same as your username" />
+        </div>
       </div>
-    </div>
 
-    <div class="edit-field">
-      <div class="input">
-        {{!-- <label>Description</label> --}}
-        <input type="text" name="description" value="{{user.description}}" placeholder="Description"/>
+      <div class="edit-field">
+        <div class="input">
+          <label>Description</label>
+          <textarea name="description" value="{{user.description}}" placeholder="Write something about your organisation..."></textarea>
+        </div>
       </div>
-    </div>
 
+      <div class="edit-field">
+        <div class="input">
+          <label>Email</label>
+          <input type="email" name="mail" value="{{user.mail}}" placeholder="Ej.: miemail@email.com"/>
+        </div>
+      </div>
 
-    <div class="edit-field">
-      <div class="input">
-        {{!-- <label>Mail</label> --}}
-        <input type="email" name="mail" value="{{user.mail}}" placeholder="Email"/>
+      <div class="edit-field">
+        <div class="input">
+          <label>Phone number</label>
+          <input type="text" name="phone" value="{{user.phone}}" placeholder="Ej.: (00) 123 45 67" />
+        </div>
       </div>
-    </div>
 
-    <div class="edit-field">
-      <div class="input">
-        {{!-- <label>Phone number</label> --}}
-        <input type="text" name="phone" value="{{user.phone}}" placeholder="Phone" />
+      <div class="edit-field">
+        <div class="input">
+          <label>Website</label>
+          <input type="text" name="website" value="{{user.website}}" placeholder="Ej.: www.miwebsite.com"/>
       </div>
-    </div>
 
-    <div class="edit-field">
-      <div class="input">
-        {{!-- <label>Website</label> --}}
-        <input type="text" name="website" value="{{user.website}}" placeholder="Website"/>
-    </div>
-    </div>
-    <div class="edit-field">
-      <div class="input">
-        {{!-- <label>Facebook</label> --}}
-        <input type="text" name="facebook" value="{{user.facebook}}" placeholder="Facebook link"/>
       </div>
-    </div>
-    <div class="edit-field">
-      <div class="input">
-        {{!-- <label>Instagram</label> --}}
-        <input type="text" name="instagram" value="{{user.instagram}}" placeholder="Instagram link"/>
+      <div class="edit-field">
+        <div class="input">
+          <label>Facebook</label>
+          <input type="text" name="facebook" value="{{user.facebook}}" placeholder="Ej.: www.facebook.com/miorganisation"/>
+        </div>
       </div>
-    </div>
-    <div class="edit-field">
-      <div class="input">
-        {{!-- <label>Twitter</label> --}}
-        <input type="text" name="twitter" value="{{user.twitter}}" placeholder="Twitter link"/>
-      </div>
-    </div>
-  </div>
 
-  <div class="edit-field">
-    <div>
-      <p>Type of Organisation</p>
-    </div>
-    <div class="checkbox">
-      <div>
-        <label>Medicine</label>
-        <input type="checkbox" name="medicine" />
+      <div class="edit-field">
+        <div class="input">
+          <label>Instagram</label>
+          <input type="text" name="instagram" value="{{user.instagram}}" placeholder="Ej.: www.instagram.com/miorganisation"/>
+        </div>
       </div>
-      <div>
-        <label>Food</label>
-        <input type="checkbox" name="food" />
+      
+      <div class="edit-field">
+        <div class="input">
+          <label>Twitter</label>
+          <input type="text" name="twitter" value="{{user.twitter}}" placeholder="Ej.: twitter.com/miorganisation"/>
+        </div>
       </div>
-      <div>
-        <label>Education</label>
-        <input type="checkbox" name="education" />
-      </div>
-    </div>
-  </div>
 
-  <div class="edit-field submit">
-    <button type="submit">Save</button>
-    {{#if messages.length}}
-    <ul class="validation">
-      {{#each messages}}<li>{{this}}</li>{{/each}}
-    </ul>
-    {{/if}}
-  </div>
-</form>
+      <div class="edit-field">
+        <div>
+          <p>Type of Organisation</p>
+        </div>
+        <div class="checkbox">
+          <div>
+            <label>Medicine</label>
+            <input type="checkbox" name="medicine" />
+          </div>
+          <div>
+            <label>Food</label>
+            <input type="checkbox" name="food" />
+          </div>
+          <div>
+            <label>Education</label>
+            <input type="checkbox" name="education" />
+          </div>
+        </div>
+      </div>
+
+      <div class="submit">
+        <button class="buttton-save" type="submit">Save</button>
+        {{#if messages.length}}
+          <div class="validation">
+            {{#each messages}}{{this}}{{/each}}
+          </div>
+        {{/if}}
+      </div>
+
+    </div>
+  </form>
 </div>
