@@ -1,6 +1,7 @@
 'use strict';
 
 // --------- App init --------- //
+require('dotenv').config();
 const flash = require('connect-flash');
 const express = require('express');
 const path = require('path');
@@ -9,6 +10,7 @@ const logger = require('morgan');
 const mongoose = require('mongoose');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
+const cloudinary = require('cloudinary');
 
 // --------- Require routes --------- //
 
@@ -23,7 +25,7 @@ const app = express();
 
 // --------- mongoose connect --------- //
 mongoose.Promise = Promise;
-mongoose.connect('mongodb://localhost/organisations', {
+mongoose.connect(process.env.MONGODB_URI, {
   keepAlive: true,
   reconnectTries: Number.MAX_VALUE
 });
@@ -61,6 +63,14 @@ app.use(session({
 app.use((req, res, next) => {
   app.locals.currentUser = req.session.currentUser; // this create a local variable.
   next();
+});
+
+// --------- Cloudinary set up --------- //
+
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_NAME,
+  api_key: process.env.CLOUDINARY_KEY,
+  api_secret: process.env.CLOUDINARY_SECRET
 });
 
 // --------- Setup routes --------- //

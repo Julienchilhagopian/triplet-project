@@ -11,7 +11,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 16px "Avenir Next", Helvetica, Arial, sans-serif;
 }
 
 
@@ -33,7 +33,7 @@ body {
 } */
 
 
-/* ----- Nav-bar when user IS NOT logged in ----- */
+/* ----- Nav-bar for all users ----- */
 
 .nav-not-logged {
   height: 60px;
@@ -41,57 +41,77 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
  }
  
  .nav-not-logged a {
    text-decoration: none;
+   padding: 0 10px;
    color: white;
  }
  
- .nav-not-logged a {
- padding: 0 10px;
- }
- 
  .logo {
-   font-size: 25px;
+   font-size: 15px;
+   font-weight: bold;
+   margin-left: 10px;
+ }
+
+ .logo-div {
+   width: 40%;
  }
  
- .links {
-   display: none;
+ .nav-not-logged-links {
+  display: flex;
+  align-items: center;
  }
 
-@media (min-width: 767px) {
-  .links {
-    display: unset;
+ @media (min-width: 767px) {
+  .logo {
+    font-size: 30px;
   }
-}
 
-/* ----- Nav-bar when user IS logged in ----- */
+  .logo-div {
+    width: 70%;
+  }
 
-.nav-logout {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 17px;
-}
+ }
 
+/* ----- Nav-bar Buttons ----- */
 
-/* Log out button */
-
-.logout-btn {
-  background-color: rgb(92, 129, 160); 
+.nav-logged-in-btn {
+  background-color: transparent;  
   border: none;
   color: white;
-  padding: 10px 20px;
+  padding: 8px 15px;
+  margin: 0 5px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  border-radius: 10px;
+  font-size: 13px;
+  border-radius: 5px;
 }
 
-.logout-btn:hover {
-  opacity: 0.9;
+.logout-btn {
+  border: 1px solid tomato;
 }
+.logout-btn:hover {
+  background-color: tomato; 
+  color: white;
+}
+
+.loggin-btn {
+  border: 1px solid rgb(248, 195, 46);
+}
+.loggin-btn:hover {
+  background-color: rgb(248, 195, 46); 
+  color: white;
+}
+
+@media (min-width: 767px) {
+  .nav-logged-in-btn {
+    font-size: 20px;
+  }
+
+ }
 
 /* ----- Home page ----- */
 /* ---- Mobile version - Home - page 1 ---- */
@@ -139,19 +159,19 @@ h1 {
 /* ---- Mobile version - Home - page 2 ---- */
 
 
-img {
-  width: 130px;
+.categories-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10%;
+  padding-bottom: 10%;
+  background-image: url(https://besthqwallpapers.com/img/original/39056/turquoise-abstraction-geometric-background-asbestos-lines-material-design.jpg);
+  background-size: cover;
 }
 
-.categories-container {
- display: flex;
- flex-direction: column;
- align-items: center;
- padding-top: 10%;
- padding-bottom: 10%;
- background-image: url(https://besthqwallpapers.com/img/original/39056/turquoise-abstraction-geometric-background-asbestos-lines-material-design.jpg);
- background-size: cover;
 
+.categories-container img {
+  width: 130px;
 }
 
 .card  {
@@ -379,7 +399,11 @@ hr {
 }
 
 /* ---- sign up, login and edit profile ---- */
-
+.edit-container{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
 .auth-container {
   height: 100vh;
   display: flex;
@@ -387,29 +411,28 @@ hr {
   justify-content: space-around;
 }
 .auth-form {
+  border-radius: 6px;
   display: flex;
   flex-flow: column;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  height: 400px;
-  width: 80%;
+  width: 95%;
   text-align: center;
-  background-color:rgb(40, 165, 174);
-  margin: 100px 20%;
-  border-radius: 15px;
+  background-color:#4fcec7;
 }
+
 .auth-form h1 {
   font-size: 30px;
-  color: white;
+  color:#ffffff;
 }
 
 .edit-form {
-  height: 700px;
+  height: auto;
 }
 
 .field {
-  width: 50%;
+  width: 100%;
   padding: 5px;
 }
 
@@ -423,18 +446,19 @@ hr {
 }
 
 .submit {
-  width: 50%;
+  width: 100%;
+  margin-bottom: 50px;
 }
 
 .submit button {
-  width: 80%;
+  width: 50%;
   height: 50px;
   border-radius: 10px;
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .edit-field {
-  color: white;
+  color:#ffffff;
   margin-bottom: 10px;
 }
 
@@ -445,24 +469,55 @@ hr {
   margin-bottom: 20px;
 }
 
-.checkbox input  {
+.checkbox input {
   height: 15px;
 }
 
-.all-fields  {
+.all-fields {
   width: 80%;
 }
 
-.input input {
-  width: 80%;
+.input{
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+}
+
+.input label{
+  text-align: left;
+}
+
+.input input, textarea {
+  width: 100%;
   padding: 5px;
   margin-bottom: 5px;
   border-radius: 10px;
 }
 
-.validation li {
-  background-color: red;
+.input textarea{
+  min-height: 80px;
 }
+
+.validation {
+  background-color:#f72100;
+  padding: 20px;
+  color:#ffffff;
+  margin-top: 20px;
+}
+
+@media (min-width: 767px) {
+  .auth-form{
+    width: 80%;
+    margin: 100px 20%;
+    border-radius: 15px;
+  }
+  
+  .field {
+    width: 50%;
+  }
+}
+
+/* ---- footer ---- */ 
 
 footer {
   background: rgb(40, 165, 174);

@@ -36,6 +36,9 @@ const userSchema = new Schema({
   },
   website: {
     type: String
+  },
+  imgUrl: {
+    type: String
   }
 });
 
