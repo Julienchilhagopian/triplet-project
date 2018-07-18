@@ -11,7 +11,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 16px "Avenir Next", Helvetica, Arial, sans-serif;
 }
 
 
@@ -33,7 +33,7 @@ body {
 } */
 
 
-/* ----- Nav-bar when user IS NOT logged in ----- */
+/* ----- Nav-bar for all users ----- */
 
 .nav-not-logged {
   height: 60px;
@@ -41,57 +41,77 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
  }
  
  .nav-not-logged a {
    text-decoration: none;
+   padding: 0 10px;
    color: white;
  }
  
- .nav-not-logged a {
- padding: 0 10px;
- }
- 
  .logo {
-   font-size: 25px;
+   font-size: 15px;
+   font-weight: bold;
+   margin-left: 10px;
+ }
+
+ .logo-div {
+   width: 40%;
  }
  
- .links {
-   display: none;
+ .nav-not-logged-links {
+  display: flex;
+  align-items: center;
  }
 
-@media (min-width: 767px) {
-  .links {
-    display: unset;
+ @media (min-width: 767px) {
+  .logo {
+    font-size: 30px;
   }
-}
 
-/* ----- Nav-bar when user IS logged in ----- */
+  .logo-div {
+    width: 70%;
+  }
 
-.nav-logout {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 17px;
-}
+ }
 
+/* ----- Nav-bar Buttons ----- */
 
-/* Log out button */
-
-.logout-btn {
-  background-color: rgb(92, 129, 160); 
+.nav-logged-in-btn {
+  background-color: transparent;  
   border: none;
   color: white;
-  padding: 10px 20px;
+  padding: 8px 15px;
+  margin: 0 5px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  border-radius: 10px;
+  font-size: 13px;
+  border-radius: 5px;
 }
 
-.logout-btn:hover {
-  opacity: 0.9;
+.logout-btn {
+  border: 1px solid tomato;
 }
+.logout-btn:hover {
+  background-color: tomato; 
+  color: white;
+}
+
+.loggin-btn {
+  border: 1px solid rgb(248, 195, 46);
+}
+.loggin-btn:hover {
+  background-color: rgb(248, 195, 46); 
+  color: white;
+}
+
+@media (min-width: 767px) {
+  .nav-logged-in-btn {
+    font-size: 20px;
+  }
+
+ }
 
 /* ----- Home page ----- */
 /* ---- Mobile version - Home - page 1 ---- */
@@ -139,19 +159,19 @@ h1 {
 /* ---- Mobile version - Home - page 2 ---- */
 
 
-img {
-  width: 130px;
+.categories-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10%;
+  padding-bottom: 10%;
+  background-image: url(https://besthqwallpapers.com/img/original/39056/turquoise-abstraction-geometric-background-asbestos-lines-material-design.jpg);
+  background-size: cover;
 }
 
-.categories-container {
- display: flex;
- flex-direction: column;
- align-items: center;
- padding-top: 10%;
- padding-bottom: 10%;
- background-image: url(https://besthqwallpapers.com/img/original/39056/turquoise-abstraction-geometric-background-asbestos-lines-material-design.jpg);
- background-size: cover;
 
+.categories-container img {
+  width: 130px;
 }
 
 .card  {

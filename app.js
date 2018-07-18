@@ -1,6 +1,7 @@
 'use strict';
 
 // --------- App init --------- //
+require('dotenv').config();
 const flash = require('connect-flash');
 const express = require('express');
 const path = require('path');
@@ -23,7 +24,7 @@ const app = express();
 
 // --------- mongoose connect --------- //
 mongoose.Promise = Promise;
-mongoose.connect('mongodb://localhost/organisations', {
+mongoose.connect(process.env.MONGODB_URI, {
   keepAlive: true,
   reconnectTries: Number.MAX_VALUE
 });
