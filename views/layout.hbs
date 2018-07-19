@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Help VZLA</title>
+  <title>Helpvzla</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel='stylesheet' href='/stylesheets/style.css' />
@@ -12,74 +12,68 @@
 <body>
   <div class="container">
     <header>
-      {{#if currentUser}}
-       <nav role="navigation" class="nav-not-logged">
+
+      <nav role="navigation" class="nav-container">
         <div id="menuToggle">
           <input type="checkbox" />
-        
-        <span></span>
-        <span></span>
-        <span></span>
 
-        <ul id="menu">
-          <a href="/org?category=food"><li>Food</li></a>
-          <a href="/org?category=medicine"><li>Medicine</li></a>
-          <a href="/org?category=education"><li>Education</li></a>
-        </ul>
-      </div>
-      <div class="logo-div">
-        <a href="/" class="logo">helpvzla.com</a>
+          <span></span>
+          <span></span>
+          <span></span>
+
+          <ul id="menu">
+            <a href="/org?category=food">
+              <li>Food</li>
+            </a>
+            <a href="/org?category=medicine">
+              <li>Medicine</li>
+            </a>
+            <a href="/org?category=education">
+              <li>Education</li>
+            </a>
+            <a href="/org">
+              <li>All</li>
+            </a>
+          </ul>
         </div>
-         <div class="nav-not-logged-links">
+        <a href="/">helpvzla.com</a>
+        {{#if currentUser}}
+        <div class="nav-buttons">
           <form method="POST" action="/auth/logout">
-          <button class="nav-logged-in-btn logout-btn">log out</button>
+            <button>Log out</button>
           </form>
           <form method="GET" action="/org/{{currentUser._id}}">
-          <button class="nav-logged-in-btn loggin-btn">Profile</button>
+            <button>Profile</button>
           </form>
         </div>
-    </nav>
-    
-      {{else}}
-      <section>
-      <nav role="navigation" class="nav-not-logged">
-        <div id="menuToggle">
-          <input type="checkbox" />
-        
-        <span></span>
-        <span></span>
-        <span></span>
-
-        <ul id="menu">
-          <a href="/org?category=food"><li>Food</li></a>
-          <a href="/org?category=medicine"><li>Medicine</li></a>
-          <a href="/org?category=education"><li>Education</li></a>
-        </ul>
-      </div>
-         <div>
-          <a href="/" class="logo">helpvzla.com</a>
+        {{else}}
+        <div>
           <a href="/auth/signup">Sign up</a>
           <a href="/auth/login">Login</a>
         </div>
-    </nav>
-      {{!-- <nav class="nav-not-logged">
-        <a href="/" class="logo">helpvzla.com</a>
-        <div class="links">
-        <a href="/org?category=food">Food</a>
-        <a href="/org?category=medicine">Medicine</a>
-        <a href="/org?category=education">Education</a>
-        </div>
-        <div>
-        <a href="/auth/signup">Sign up</a>
-        <a href="/auth/login">Login</a>
-        </div>
-      </nav> --}}
-      </section>
-      {{/if}}
+        {{/if}}
+      </nav>
     </header>
   </div>
   {{{body}}}
-<footer>Made with love&struggle by the tripletas</footer>
+  <footer>
+    <div>
+      <a href="/org?category=food">
+        <img src="../images/food-white.svg" alt="">
+      </a>
+      <a href="/org?category=medicine">
+        <img src="../images/medicine-white.svg" alt="">
+      </a>
+      <a href="/org?category=education">
+        <img src="../images/education-white.svg" alt="">
+      </a>
+    </div>
+    <div class="mail-address">
+      <a href="" class="mail-address">info-helpvzla@gmail.com</a>
+    </div>
+    <p> Made with love & struggle by the tripletas</p>
+
+  </footer>
 </body>
 </div>
 
