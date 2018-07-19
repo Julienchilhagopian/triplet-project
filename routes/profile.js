@@ -32,6 +32,7 @@ router.get('/edit', (req, res, next) => {
 
       const data = {
         messages: req.flash('edit-profile-error'),
+        previousData: req.flash('edit-profile-data')[0],
         user: user,
         hasCategoryMedicine: hasCategoryMedicine,
         hasCategoryFood: hasCategoryFood,
@@ -48,21 +49,6 @@ router.post('/edit', (req, res, next) => {
     return res.redirect('/');
   }
 
-  if (!req.body.description) {
-    req.flash('edit-profile-error', 'Description is required');
-    return res.redirect('/profile/edit');
-  }
-
-  if (!req.body.mail) {
-    req.flash('edit-profile-error', 'Email is required');
-    return res.redirect('/profile/edit');
-  }
-
-  if (!req.body.medicine && !req.body.food && !req.body.education) {
-    req.flash('edit-profile-error', 'Please select at least one type of organisation');
-    return res.redirect('/profile/edit');
-  }
-
   const categories = [];
 
   if (req.body.medicine) {
@@ -77,9 +63,31 @@ router.post('/edit', (req, res, next) => {
     categories.push('education');
   }
 
+  const previousData = req.body;
+  previousData.categories = categories;
+
+  if (!req.body.description) {
+    req.flash('edit-profile-data', previousData);
+    req.flash('edit-profile-error', 'Description is required');
+    return res.redirect('/profile/edit');
+  }
+
+  if (!req.body.mail) {
+    req.flash('edit-profile-data', previousData);
+    req.flash('edit-profile-error', 'Email is required');
+    return res.redirect('/profile/edit');
+  }
+
+  if (!req.body.medicine && !req.body.food && !req.body.education) {
+    req.flash('edit-profile-data', previousData);
+    req.flash('edit-profile-error', 'Please select at least one type of organisation');
+    return res.redirect('/profile/edit');
+  }
+
   const data = {
     username: req.body.username,
     description: req.body.description,
+    isActive: false,
     phone: req.body.phone,
     mail: req.body.mail,
     website: req.body.website,
@@ -91,7 +99,7 @@ router.post('/edit', (req, res, next) => {
 
   const options = {new: true};
 
-// --------- Mail part --------- //
+  // --------- Mail part --------- //
   User.findByIdAndUpdate(currentUser._id, data, options)
     .then((user) => {
       req.session.currentUser = user;

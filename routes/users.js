@@ -7,11 +7,15 @@ const User = require('../models/user');
 
 /* GET organisations listing. */
 router.get('/', (req, res, next) => {
-  var queryCategory = req.query.category;
-  User.find({categories: {$in: [queryCategory]}})
+  let query = {};
+  if (req.query.category) {
+    query = {categories: {$in: [req.query.category]}};
+  }
+  User.find(query)
     .then((result) => {
       const data = {
-        users: result
+        users: result,
+        category: req.query.category
       };
       res.render('org-list', data);
     })
@@ -22,22 +26,31 @@ router.get('/', (req, res, next) => {
 
 /* GET organisations listing. */
 router.get('/:id', (req, res, next) => {
-  let showEdit = false;
   const userId = req.params.id;
   User.findById(userId)
     .then((result) => {
-      if (req.session.currentUser) {
-        if (req.session.currentUser._id === result.id) {
-          showEdit = true;
-        }
+      if (!req.session.currentUser && !result.isActive) {
+        res.redirect('/');
+        return;
       }
-
+      const owner = req.session.currentUser._id === result.id;
       const data = {
-        user: result,
-        userEdit: showEdit
+        user: result
       };
+      if (!result.isActive && !owner) {
+        res.redirect('/');
+        return;
+      } else if (result.isActive && !owner) {
+        res.render('org-details', data);
+        return;
+      }
+      if (!result.isActive && owner) {
+        data.showEdit = true;
+        data.activeWarning = true;
+      }
       res.render('org-details', data);
     })
+
     .catch(error => {
       console.log(error);
     });

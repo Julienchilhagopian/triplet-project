@@ -1,6 +1,8 @@
 <div class="container-org-details mobile-container">
-  <h2>
-    {{user.username}}</h2>
+  {{#if activeWarning}}
+   <h3>Your account is not yet active</h3>
+  {{/if}}
+  <h2>{{user.username}}</h2>
   <div class="details-bg-image">
     <img src="https://contratar-seguro.com/wp-content/uploads/2017/09/seguro-viaje-venezuela.jpg" alt="">
   </div>
@@ -30,7 +32,7 @@
       {{#if user.phone}}
       <p>Telephone: {{user.phone}}</p> {{/if}}
     </div>
-    {{#if userEdit}}
+    {{#if showEdit}}
     <a class="user-edit" target="_blank" href="/profile/edit">Edit page</a>
     {{/if}}
     <div class="webpage-link">
@@ -63,9 +65,6 @@
         {{/if}}
       </div>
     </div>
-
-
-
 
   </div>
 </div>

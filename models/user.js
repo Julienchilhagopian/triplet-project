@@ -12,6 +12,10 @@ const userSchema = new Schema({
     type: String,
     required: true
   },
+  isActive: {
+    type: Boolean,
+    default: false
+  },
   categories: [{
     type: String,
     enum: ['medicine', 'food', 'education']

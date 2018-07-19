@@ -1,8 +1,14 @@
-
-<h1>Organisation list</h1>
+{{#if category}}
+<h1>{{category}} category</h1>
+{{/if}}
+{{#unless category}}
+<h1>All categories</h1>
+{{/unless}}
 
 <div class="all-org-list">
     {{#each users}}
+        {{#if this.isActive}}
+
     <div class="detail-card">
        <img src="{{this.imgUrl}}" alt="">
          <div class="org-description">
@@ -15,5 +21,6 @@
         </a>
         </div>
     </div>
+        {{/if}}
     {{/each}}
 </div>
