@@ -14,7 +14,6 @@ body {
   font: 16px "Avenir Next", Helvetica, Arial, sans-serif;
 }
 
-
 .mobile-container {
   margin: 0 1% 0;
 }
@@ -269,9 +268,16 @@ h1 {
   background-color: rgba(255, 255, 255, 0.918);
 }
 
-.detail-card img {
-  width: 100%;
+.detail-card-img {
+  object-fit: cover;
 }
+
+
+.detail-card-img img {
+  width:100%;
+}
+
+
 
 .detail-card p {
   margin: 30px 0;
