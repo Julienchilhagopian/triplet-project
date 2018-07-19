@@ -1,5 +1,4 @@
-
-<div class="auth-container">
+<div class="auth-container home-background">
   <form method="POST" action="/auth/signup" class="auth-form">
     <h3 class="auth-header">Create account</h3>
     <div class="field">
@@ -7,17 +6,16 @@
     </div>
 
     <div class="field password">
-      <input type="password" name="password" placeholder="Password"/>
+      <input type="password" name="password" placeholder="Password" />
     </div>
 
     <div class="field submit">
       <button type="submit">Sign Up</button>
       {{#if messages.length}}
-        <div class="validation">
-          {{#each messages}}{{this}}{{/each}}
-        </div>
+      <div class="validation">
+        {{#each messages}}{{this}}{{/each}}
+      </div>
       {{/if}}
     </div>
   </form>
 </div>
-

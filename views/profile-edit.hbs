@@ -1,93 +1,83 @@
-<div class="edit-container">
-  
-  <form method="POST" action="/profile/edit" class="auth-form edit-form">
+<div class="edit-container home-background">
+
+  <form method="POST" action="/profile/edit" class="edit-form">
     <h1>Edit Profile</h1>
-    <img src="{{user.imgUrl}}"/>
+    <img src="{{user.imgUrl}}" />
     <a href="/profile/edit/org-picture">change your picture</a>
-    <div class="all-fields">
-      <div class="edit-field">
-        <div class="input">
-          <label>Organisation name</label>
-          <input type="text" name="username" value="{{#if previousData}}{{previousData.username}}{{else}}{{user.username}}{{/if}}" placeholder="The same as your username" />
-        </div>
-      </div>
 
-      <div class="field">
-          <label>Description</label>
-          <textarea name="description" placeholder="Write something about your organisation...">{{#if previousData}}{{previousData.description}}{{else}}{{user.description}}{{/if}}</textarea>
-      </div>
+    <div class="field">
+      <label>Organisation name</label>
+      <input type="text" name="username" value="{{#if previousData}}{{previousData.username}}{{else}}{{user.username}}{{/if}}"
+        placeholder="The same as your username" />
+    </div>
 
-      <div class="edit-field">
-        <div class="input">
-          <label>Email</label>
-          <input type="email" name="mail" value="{{#if previousData}}{{previousData.mail}}{{else}}{{user.mail}}{{/if}}" placeholder="Ej.: miemail@email.com"/>
-        </div>
-      </div>
+    <div class="field">
+      <label>Description</label>
+      <textarea name="description" placeholder="Write something about your organisation...">{{#if previousData}}{{previousData.description}}{{else}}{{user.description}}{{/if}}</textarea>
+    </div>
 
-      <div class="edit-field">
-        <div class="input">
-          <label>Phone number</label>
-          <input type="text" name="phone" value="{{#if previousData}}{{previousData.phone}}{{else}}{{user.phone}}{{/if}}" placeholder="Ej.: (00) 123 45 67" />
-        </div>
-      </div>
+    <div class="field">
+      <label>Email</label>
+      <input type="email" name="mail" value="{{#if previousData}}{{previousData.mail}}{{else}}{{user.mail}}{{/if}}" placeholder="Ej.: miemail@email.com"
+      />
+    </div>
 
-      <div class="edit-field">
-        <div class="input">
-          <label>Website</label>
-          <input type="text" name="website" value="{{#if previousData}}{{previousData.website}}{{else}}{{user.website}}{{/if}}" placeholder="Ej.: www.miwebsite.com"/>
-      </div>
+    <div class="field">
+      <label>Phone number</label>
+      <input type="text" name="phone" value="{{#if previousData}}{{previousData.phone}}{{else}}{{user.phone}}{{/if}}" placeholder="Ej.: (00) 123 45 67"
+      />
+    </div>
 
-      </div>
-      <div class="edit-field">
-        <div class="input">
-          <label>Facebook</label>
-          <input type="text" name="facebook" value="{{#if previousData}}{{previousData.facebook}}{{else}}{{user.facebook}}{{/if}}" placeholder="Ej.: www.facebook.com/miorganisation"/>
-        </div>
-      </div>
+    <div class="field">
+      <label>Website</label>
+      <input type="text" name="website" value="{{#if previousData}}{{previousData.website}}{{else}}{{user.website}}{{/if}}" placeholder="Ej.: www.miwebsite.com"
+      />
+    </div>
+    <div class="field">
+      <label>Facebook</label>
+      <input type="text" name="facebook" value="{{#if previousData}}{{previousData.facebook}}{{else}}{{user.facebook}}{{/if}}"
+        placeholder="Ej.: www.facebook.com/miorganisation" />
+    </div>
 
-      <div class="edit-field">
-        <div class="input">
-          <label>Instagram</label>
-          <input type="text" name="instagram" value="{{#if previousData}}{{previousData.instagram}}{{else}}{{user.instagram}}{{/if}}" placeholder="Ej.: www.instagram.com/miorganisation"/>
-        </div>
-      </div>
-      
-      <div class="edit-field">
-        <div class="input">
-          <label>Twitter</label>
-          <input type="text" name="twitter" value="{{#if previousData}}{{previousData.twitter}}{{else}}{{user.twitter}}{{/if}}" placeholder="Ej.: twitter.com/miorganisation"/>
-        </div>
-      </div>
+    <div class="field">
+      <label>Instagram</label>
+      <input type="text" name="instagram" value="{{#if previousData}}{{previousData.instagram}}{{else}}{{user.instagram}}{{/if}}"
+        placeholder="Ej.: www.instagram.com/miorganisation" />
+    </div>
 
-      <div class="edit-field">
+
+    <div class="field">
+      <label>Twitter</label>
+      <input type="text" name="twitter" value="{{#if previousData}}{{previousData.twitter}}{{else}}{{user.twitter}}{{/if}}" placeholder="Ej.: twitter.com/miorganisation"
+      />
+    </div>
+
+    <div class="checkbox-container">
+      <p>Type of Organisation</p>
+
+      <div class="checkbox">
         <div>
-          <p>Type of Organisation</p>
+          <label>Medicine</label>
+          <input type="checkbox" name="medicine" {{#if hasCategoryMedicine}} checked {{/if}}/>
         </div>
-        <div class="checkbox">
-          <div>
-            <label>Medicine</label>
-            <input type="checkbox" name="medicine" {{#if hasCategoryMedicine}} checked {{/if}}/>
-          </div>
-          <div>
-            <label>Food</label>
-            <input type="checkbox" name="food" {{#if hasCategoryEducation}} checked {{/if}}/>
-          </div>
-          <div>
-            <label>Education</label>
-            <input type="checkbox" name="education" {{#if hasCategoryFood}} checked {{/if}}/>
-          </div>
+        <div>
+          <label>Food</label>
+          <input type="checkbox" name="food" {{#if hasCategoryEducation}} checked {{/if}}/>
+        </div>
+        <div>
+          <label>Education</label>
+          <input type="checkbox" name="education" {{#if hasCategoryFood}} checked {{/if}}/>
         </div>
       </div>
+    </div>
 
-      <div class="submit">
-        <button class="buttton-save" type="submit">Save</button>
-        {{#if messages.length}}
-          <div class="validation">
-            {{#each messages}}{{this}}{{/each}}
-          </div>
-        {{/if}}
+    <div class="submit">
+      <button class="buttton-save" type="submit">Save</button>
+      {{#if messages.length}}
+      <div class="validation">
+        {{#each messages}}{{this}}{{/each}}
       </div>
-
+      {{/if}}
     </div>
   </form>
 </div>

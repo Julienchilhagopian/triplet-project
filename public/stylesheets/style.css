@@ -18,6 +18,10 @@ body {
   margin: 0 1% 0;
 }
 
+.contain-page{
+ min-height: calc(100vh - 120px);
+}
+
 
 /* ----- Nav-bar ----- */
 
@@ -47,6 +51,14 @@ body {
 .nav-buttons {
   display: inherit;
 }
+
+/* ----- home background image ----- */
+.home-background {
+  background-image: url(../images/iStock-608003210.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; 
+}
  
 /* ----- Home page 1 ----- */
 .home-display {
@@ -58,10 +70,6 @@ body {
 
 .home-page {
   height: 95vh;
-  background-image: url(../images/iStock-608003210.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center; 
   margin-bottom: 30px;
   color: white;
 }
@@ -156,7 +164,7 @@ footer div {
 
 
 @media (min-width: 767px) {
-  h1 {
+  .home-page h1 {
     font-size: 60px;
     margin-top: 83px;
   }
@@ -380,9 +388,6 @@ hr {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url(../images/iStock-608003210.jpg);
-  background-position: center;
-  background-size: cover;
 }
 
 .auth-form {
@@ -392,25 +397,40 @@ hr {
 }
 
 .auth-header {
-  font-size: 25px;
+  font-size: 35px;
   color:rgb(40, 163, 174);
 }
 
 .edit-container{
   display: flex;
   justify-content: center;
-  margin-bottom: 15px;
 }
 
 .edit-form {
-  height: auto;
+  width: 85%;
+  margin: 45px 0;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.89);
+}
+
+.edit-form .field {
+  margin-bottom: 15px;
+}
+
+.edit-form h1 {
+  color: rgb(40, 163, 174);
+  font-size: 40px;
+}
+
+.checkbox-container label, p {
+  font-weight: bold;
 }
 
 /* ----- forms ------ */
 
 
 .field {
-  padding: 10px 0;
+  padding: 10px 50px;
 }
 
 .field input,
@@ -426,9 +446,7 @@ hr {
   background-color: rgba(255, 255, 255, 0); 
 }
 
-
-
-.field.password {
+.field .password {
   margin-bottom: 20px;
 }
 
@@ -436,6 +454,10 @@ hr {
   max-width: 100%;
   min-width: 100%;
   min-height: 80px;
+}
+
+.field label {
+  font-weight: bold;
 }
 
 .submit {
@@ -446,14 +468,17 @@ hr {
 .submit button {
   cursor:pointer;
   outline:none;
-  width: 25%;
+  border: 2px solid rgb(40, 163, 174);
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0);
+  width: 100px;
   height: 45px;
   font-size: 16px;
+  font-weight: bold;
+  color: rgb(40, 163, 174);
 }
 
 /* ----- end of forms ------ */
-
-
 
 .checkbox {
   display: flex;
@@ -464,10 +489,6 @@ hr {
 
 .checkbox input {
   height: 15px;
-}
-
-.all-fields {
-  width: 80%;
 }
 
 .input{
@@ -489,14 +510,17 @@ hr {
 
 @media (min-width: 767px) {
   .auth-form{
-    width: 80%;
-    margin: 100px 20%;
-    border-radius: 15px;
+    width: 45%;
   }
-  
+
   .field {
-    width: 50%;
+   padding: 10px 70px;
   }
 }
+
+.hello {
+  margin: 20px 0;
+}
+
 
 

@@ -1,23 +1,25 @@
-<div class="auth-container">
+<div class="auth-container home-background">
   <form method="POST" action="/auth/login" class="auth-form">
     <h1 class="auth-header">Login</h1>
 
     <div class="field">
-      {{!-- <label>Username</label> --}}
-      <input type="text" name="username" placeholder="Username"/>
+      {{!--
+      <label>Username</label> --}}
+      <input type="text" name="username" placeholder="Username" />
     </div>
 
     <div class="field password">
-      {{!-- <label>Password</label> --}}
-      <input type="password" name="password" placeholder="Password"/>
+      {{!--
+      <label>Password</label> --}}
+      <input type="password" name="password" placeholder="Password" />
     </div>
 
     <div class="field submit">
       <button type="submit">Login</button>
       {{#if messages.length}}
-        <div class="validation">
-          {{#each messages}}{{this}}{{/each}}
-        </div>
+      <div class="validation">
+        {{#each messages}}{{this}}{{/each}}
+      </div>
       {{/if}}
     </div>
   </form>
