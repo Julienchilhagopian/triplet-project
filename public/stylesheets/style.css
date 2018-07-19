@@ -26,7 +26,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 60px;
+  height: 65px;
 }
 
 .nav-container a {
@@ -36,100 +36,109 @@ body {
   font-weight: 500;
 }
  
- 
- 
-
- 
-
-/* ----- Nav-bar Buttons ----- */
-
-
-
-
-
-
-
-
-/* ----- Home page ----- */
-/* ---- Mobile version - Home - page 1 ---- */
-
-h1 {
-  font-size: 25px;
-  margin-top: 50px;
-}
-
-
-.titles p {
-  margin-top: 75px;
-  margin-bottom: 50px;
-}
-
-.titles button {
+.nav-container button {
+  border: none;
+  outline: none;
+  text-decoration: none;
+  color: rgb(40, 163, 174);
+  font-weight: 500;
   font-size: 15px;
-  background-color: rgb(248, 195, 46);
+}
+
+.nav-buttons {
+  display: inherit;
+}
+ 
+/* ----- Home page 1 ----- */
+.home-display {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.home-page {
+  height: 95vh;
+  background-image: url(../images/iStock-608003210.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+
+.home-page h1 {
+  margin: 0 0 20px 0;
+  font-size: 40px;
+}
+
+.home-page button {
+  border: none;
+  text-decoration: none;
+  font-size: 20px;
   padding: 20px 30px;
   border-radius: 5px;
-  border: 2px solid rgb(248, 195, 46);
-  text-decoration: none;
+  background-color: rgb(248, 195, 46);
   color: white;
-  display: inline-block;
 }
 
-.titles button:hover {
+.home-page button:hover {
   opacity: 0.9;
 }
 
 
-.titles {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
-  align-items: center;
-  color: white;
-  background-image: url(../images/iStock-608003210.jpg);
-  height: 95vh;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-/* ---- Mobile version - Home - page 2 ---- */
+/* ---- Home - page 2 ---- */
 
 
 .categories-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 10%;
-  padding-bottom: 10%;
-  background-image: url(https://besthqwallpapers.com/img/original/39056/turquoise-abstraction-geometric-background-asbestos-lines-material-design.jpg);
-  background-size: cover;
+ height: 100vh;
 }
-
 
 .categories-container img {
-  width: 130px;
+  width: 110px;
+  padding-top: 15px;
 }
 
-.card  {
+.categories-container h3 {
+  color: black;
+  font-size: 18px;
+}
+
+/* ---- Footer ---- */
+
+footer {
+  background-color: rgba(40, 163, 174, 0.678);
+  height: 25vh;
+  text-align: center; 
+  padding: 20px 0; 
+}
+
+footer img {
+  width: 35px;
+  margin: 0 10px;
+}
+
+footer div {
+  margin-bottom: 20px;
+}
+
+.mail-address {
+  margin-bottom: 25px;
+  text-decoration: none;
+}
+
+/* ---- Home desktop version ---- */
+
+.home-card {
   padding: 10px;
-  border-radius: 5px;
+  height: 50vh;
 }
 
-.card button {
-  background-color: Transparent;
-  background-repeat:no-repeat;
+.home-card button {
+  background-color: transparent;
   border: none;
   cursor:pointer;
-  overflow: hidden;
   outline:none;
 }
 
-
-.categories-container img {
-  padding-top: 25px;
-  
-}
 
 /* Avoid the text to display when on mobile version */
 .categories-container p {
@@ -138,6 +147,7 @@ h1 {
 
 
 /* ---- Website version - Home ---- */
+
 
 @media (min-width: 767px) {
   h1 {
@@ -148,39 +158,34 @@ h1 {
   .categories-container {
     display: flex;
     flex-flow: row;
-    justify-content: space-around
+    align-items: center;
+    justify-content: space-around;
+  }
+  
+  .home-card {
+      display: block;
+      width: 28%;
+      padding: 10px;
+      margin-bottom: 15px;
+      transition: 0.3s ease all;
+    }
+  
+  .home-card:hover {
+      transform: scale(1.1);
+      transition: 0.3s ease all;
+    }
+  
+  .home-card button {
+    height: 45vh;
   }
 
-
-  /* ----- Now displaying when its website versions -----  */
   .categories-container p {
-    display: unset;
-  }
-
-
-  .card {
-    display: block;
-    width: 28%;
-    background: rgba(255, 255, 255, 0.664);
-    box-shadow: 0 8px 8px rgba(0,0,0,0.15);
-    padding: 10px;
-    margin-bottom: 15px;
-    transition: 0.3s ease all;
-  }
+      display: unset;
+   }
+  
 }
 
 
-.card button {
-  background-color: Transparent;
-  background-repeat:no-repeat;
-  border: none;
-  cursor:pointer;
-  outline:none;
-} 
-.card:hover {
-  transform: scale(1.1);
-  transition: 0.3s ease all;
-}
 
 /* ---- Organisation list mobile---- */
 .all-org-list {
@@ -454,8 +459,4 @@ hr {
   }
 }
 
-/* ---- footer ---- */ 
 
-footer {
-  background: rgb(40, 165, 174);
-}
