@@ -18,6 +18,7 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const authRouter = require('./routes/auth');
 const profileRouter = require('./routes/profile');
+const activateRouter = require('./routes/activate');
 
 // --------- Express init --------- //
 
@@ -79,6 +80,7 @@ app.use('/', indexRouter);
 app.use('/org', usersRouter);
 app.use('/auth', authRouter);
 app.use('/profile', profileRouter);
+app.use('/activate', activateRouter);
 
 // --------- 404 and Error handler --------- //
 
