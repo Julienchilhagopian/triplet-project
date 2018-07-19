@@ -12,52 +12,67 @@
 <body>
   <div class="container">
     <header>
-      
-       <nav role="navigation" class="nav-container">
+
+      <nav role="navigation" class="nav-container">
         <div id="menuToggle">
           <input type="checkbox" />
-        
-        <span></span>
-        <span></span>
-        <span></span>
 
-        <ul id="menu">
-          <a href="/org?category=food"><li>Food</li></a>
-          <a href="/org?category=medicine"><li>Medicine</li></a>
-          <a href="/org?category=education"><li>Education</li></a>
-        </ul>
-      </div>
+          <span></span>
+          <span></span>
+          <span></span>
+
+          <ul id="menu">
+            <a href="/org?category=food">
+              <li>Food</li>
+            </a>
+            <a href="/org?category=medicine">
+              <li>Medicine</li>
+            </a>
+            <a href="/org?category=education">
+              <li>Education</li>
+            </a>
+            <a href="/org">
+              <li>All</li>
+            </a>
+          </ul>
+        </div>
         <a href="/">helpvzla.com</a>
         {{#if currentUser}}
         <div class="nav-buttons">
-            <form method="POST" action="/auth/logout">
-              <button>Log out</button>
-            </form>
-            <form method="GET" action="/org/{{currentUser._id}}">
-              <button>Profile</button>
-            </form>
+          <form method="POST" action="/auth/logout">
+            <button>Log out</button>
+          </form>
+          <form method="GET" action="/org/{{currentUser._id}}">
+            <button>Profile</button>
+          </form>
         </div>
-          {{else}}
-          <div>
+        {{else}}
+        <div>
           <a href="/auth/signup">Sign up</a>
-          <a href="/auth/login">Login</a> 
-          </div>
-          {{/if}}   
-    </nav>
+          <a href="/auth/login">Login</a>
+        </div>
+        {{/if}}
+      </nav>
     </header>
   </div>
   {{{body}}}
-<footer>
-  <div>
-    <a href="/org?category=food"><img src="../images/food-white.svg" alt=""></a>
-    <a href="/org?category=medicine"><img src="../images/medicine-white.svg" alt=""></a>
-    <a href="/org?category=education"><img src="../images/education-white.svg" alt=""></a>
-  </div>
-  <div class="mail-address">
-    <a href="" class="mail-address">info-helpvzla@gmail.com</a>
-  </div>
-  <p> Made with love & struggle by the tripletas</p>
-  
+  <footer>
+    <div>
+      <a href="/org?category=food">
+        <img src="../images/food-white.svg" alt="">
+      </a>
+      <a href="/org?category=medicine">
+        <img src="../images/medicine-white.svg" alt="">
+      </a>
+      <a href="/org?category=education">
+        <img src="../images/education-white.svg" alt="">
+      </a>
+    </div>
+    <div class="mail-address">
+      <a href="" class="mail-address">info-helpvzla@gmail.com</a>
+    </div>
+    <p> Made with love & struggle by the tripletas</p>
+
   </footer>
 </body>
 </div>
