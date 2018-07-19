@@ -61,6 +61,8 @@ body {
   background-image: url(../images/iStock-608003210.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center; 
+  margin-bottom: 30px;
   color: white;
 }
 
@@ -84,15 +86,20 @@ body {
 }
 
 
+
 /* ---- Home - page 2 ---- */
 
+.explanation {
+  text-align: center;
+  font-size: 18px;
+}
 
 .categories-container {
- height: 100vh;
+ height: 85vh;
 }
 
 .categories-container img {
-  width: 110px;
+  width: 100px;
   padding-top: 15px;
 }
 
@@ -128,7 +135,7 @@ footer div {
 
 .home-card {
   padding: 10px;
-  height: 50vh;
+  height: 30vh;
 }
 
 .home-card button {
@@ -154,18 +161,35 @@ footer div {
     margin-top: 83px;
   }
 
+  .explanation {
+    font-size: 25px;
+  }
+
   .categories-container {
     display: flex;
     flex-flow: row;
     align-items: center;
     justify-content: space-around;
   }
+
+  .categories-container p {
+    display: unset;  
+    font-size: 15px;
+  }
+
+  .categories-container h3 {
+    font-size: 25px;
+  }
+
+  .categories-container img {
+    width: 130px;
+  }
   
   .home-card {
       display: block;
-      width: 28%;
+      width: 30%;
+      height: 50vh;
       padding: 10px;
-      margin-bottom: 15px;
       transition: 0.3s ease all;
     }
   
@@ -177,10 +201,6 @@ footer div {
   .home-card button {
     height: 45vh;
   }
-
-  .categories-container p {
-      display: unset;
-   }
   
 }
 
@@ -196,7 +216,7 @@ footer div {
 }
 
 .detail-card {
-  width: 70%;
+  width: 100%;
   margin-bottom: 50px;
   text-align: center;
 }
@@ -264,8 +284,8 @@ footer div {
 }
 
 .org-types {
-  max-height: 15vh;
-  padding-top: 10px;
+ max-height: 15vh;
+ padding-top: 10px;
  display: flex;
  justify-content: space-around;
  flex-direction: row;
@@ -274,8 +294,6 @@ footer div {
 .org-types img {
   width: 80px;
 }
-
-
 
 .description-card h4 {
   text-align: center;
@@ -342,68 +360,85 @@ hr {
 }
 
 /* ---- sign up, login and edit profile ---- */
-.edit-container{
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-}
 .auth-container {
   height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: space-around;
-}
-.auth-form {
-  border-radius: 6px;
-  display: flex;
-  flex-flow: column;
   justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  width: 95%;
-  text-align: center;
-  background-color:#4fcec7;
+  background-image: url(../images/iStock-608003210.jpg);
+  background-position: center;
+  background-size: cover;
 }
 
-.auth-form h1 {
-  font-size: 30px;
-  color:#ffffff;
+.auth-form {
+  width: 95%;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+.auth-header {
+  font-size: 25px;
+  color:rgb(40, 163, 174);
+}
+
+.edit-container{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
 }
 
 .edit-form {
   height: auto;
 }
 
+/* ----- forms ------ */
+
+
 .field {
-  width: 100%;
-  padding: 5px;
+  padding: 10px 0;
 }
 
-.field input {
-  width: 80%;
+.field input,
+.field textarea {
+  width: 100%;
   height: 50px;
-  border-radius: 10px;
-  text-align: left;
-  font-size: 20px;
-  padding: 5px;
+  font-size: 16px;
+  padding-left: 10px;
+  border: none;
+  cursor:pointer;
+  outline:none;
+  border-bottom: 1px solid black;
+  background-color: rgba(255, 255, 255, 0); 
+}
+
+
+
+.field.password {
+  margin-bottom: 20px;
+}
+
+.field textarea {
+  max-width: 100%;
+  min-width: 100%;
+  min-height: 80px;
 }
 
 .submit {
   width: 100%;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 .submit button {
-  width: 50%;
-  height: 50px;
-  border-radius: 10px;
+  cursor:pointer;
+  outline:none;
+  width: 25%;
+  height: 45px;
   font-size: 16px;
 }
 
-.edit-field {
-  color:#ffffff;
-  margin-bottom: 10px;
-}
+/* ----- end of forms ------ */
+
+
 
 .checkbox {
   display: flex;
@@ -428,17 +463,6 @@ hr {
 
 .input label{
   text-align: left;
-}
-
-.input input, textarea {
-  width: 100%;
-  padding: 5px;
-  margin-bottom: 5px;
-  border-radius: 10px;
-}
-
-.input textarea{
-  min-height: 80px;
 }
 
 .validation {
