@@ -8,7 +8,7 @@ const User = require('../models/user');
 /* GET organisations listing. */
 router.get('/', (req, res, next) => {
   var queryCategory = req.query.category;
-  User.find({categories: {$in: [queryCategory]}})
+  User.find({ categories: { $in: [queryCategory] } })
     .then((result) => {
       const data = {
         users: result
