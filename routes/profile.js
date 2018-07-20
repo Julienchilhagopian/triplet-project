@@ -42,7 +42,7 @@ router.get('/edit', (req, res, next) => {
     });
 });
 
-router.post('/edit', (req, res, next) => {
+router.post('/edit', upload.single('photo'), (req, res, next) => {
   const currentUser = req.session.currentUser;
 
   if (!currentUser) {
@@ -64,7 +64,14 @@ router.post('/edit', (req, res, next) => {
   }
 
   const previousData = req.body;
+  const previousPicture = currentUser.imgUrl;
   previousData.categories = categories;
+
+  if (!previousPicture && !req.file) {
+    req.flash('edit-profile-data', previousPicture);
+    req.flash('edit-profile-error', 'Please upload a picture');
+    return res.redirect('/profile/edit');
+  }
 
   if (!req.body.description) {
     req.flash('edit-profile-data', previousData);
@@ -94,7 +101,8 @@ router.post('/edit', (req, res, next) => {
     facebook: req.body.facebook,
     instagram: req.body.instagram,
     twitter: req.body.twitter,
-    categories: categories
+    categories: categories,
+    imgUrl: req.file ? req.file.url : previousPicture
   };
 
   const options = {new: true};
@@ -125,35 +133,7 @@ router.post('/edit', (req, res, next) => {
         text: 'The account should be verified and activated in 48 hours',
         html: `<b>The account should be verified and activated in 48 hours</b>`
       });
-      res.redirect('/');
-    });
-});
-
-// --------- File upload part --------- //
-router.get('/edit/org-picture', (req, res, next) => {
-  return res.render('orgpic');
-});
-
-router.post('/edit/org-picture', upload.single('photo'), (req, res, next) => {
-  const currentUser = req.session.currentUser;
-
-  if (!req.file) {
-    return res.redirect('/profile/edit');
-  }
-  const imgUrl = req.file.url;
-
-  const data = {
-    $set: {
-      imgUrl: imgUrl
-    }
-  };
-
-  const options = {new: true};
-
-  User.findByIdAndUpdate(currentUser._id, data, options)
-    .then((user) => {
-      req.session.currentUser = user;
-      res.redirect('/');
+      res.redirect(`/org/${currentUser._id}`);
     })
     .catch(next);
 });

@@ -42,7 +42,8 @@ const userSchema = new Schema({
     type: String
   },
   imgUrl: {
-    type: String
+    type: String,
+    default: '../images/iStock-608003210.jpg'
   }
 });
 

@@ -1,9 +1,18 @@
 <div class="edit-container home-background">
 
-  <form method="POST" action="/profile/edit" class="edit-form">
+  <form method="POST" action="/profile/edit" class="edit-form" enctype="multipart/form-data">
     <h1>Edit Profile</h1>
-    <img src="{{user.imgUrl}}" />
-    <a href="/profile/edit/org-picture">change your picture</a>
+  
+   {{#if user.imgUrl}}
+    <div>
+      <img src="{{user.imgUrl}}" alt="" width="200">
+    </div>
+   {{/if}}
+
+    <div class="field">
+      <label>photo</label>
+      <input type="file" name="photo"/>
+    </div>
 
     <div class="field">
       <label>Organisation name</label>
@@ -13,7 +22,7 @@
 
     <div class="field">
       <label>Description</label>
-      <textarea name="description" placeholder="Write something about your organisation...">{{#if previousData}}{{previousData.description}}{{else}}{{user.description}}{{/if}}</textarea>
+      <textarea type="text" name="description" placeholder="Write something about your organisation...">{{#if previousData}}{{previousData.description}}{{else}}{{user.description}}{{/if}}</textarea>
     </div>
 
     <div class="field">
