@@ -20,20 +20,18 @@
 </section>
 {{/unless}}
 <div class="all-org-list">
-    {{#each users}} 
-        {{#if this.isActive}}
-            <div class="detail-card">
-                <img src="{{this.imgUrl}}" alt=>
-                <div class="org-description">
-                    <h2>{{this.username}}</h2>
-                    <p>{{this.description}}</p>
-                    <a href="org/{{this._id}}">
-                        <button>
-                            See more
-                        </button>
-                    </a>
-                </div>
-            </div>
-        {{/if}} 
-    {{/each}}
+    {{#each users}} {{#if this.isActive}}
+    <div class="detail-card">
+        <img src="{{this.imgUrl}}" alt="">
+        <div class="org-description">
+            <h2>{{this.username}}</h2>
+            <p>{{this.description}}</p>
+            <a href="org/{{this._id}}">
+                <button>
+                    See more
+                </button>
+            </a>
+        </div>
+    </div>
+    {{/if}} {{/each}}
 </div>
