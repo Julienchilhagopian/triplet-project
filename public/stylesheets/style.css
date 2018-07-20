@@ -363,7 +363,7 @@ align-items: center;
   margin-bottom: 40px;
 }
 
-.contact-info h4 {
+.contact-info  {
   text-align: center;
 }
 
@@ -372,9 +372,15 @@ hr {
   width: 70%;
 }
 
-.user-edit {
+.user-edit button {
   text-decoration: none;
-  font-size: 25px;
+  text-transform: uppercase; 
+  border-radius: 0;
+  border: 1px solid black;
+  padding: 8px 15px;
+  background: transparent;
+  background-color: white;
+  border-radius: 5px;
 }
 
 .webpage-link {
