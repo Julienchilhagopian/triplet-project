@@ -215,6 +215,23 @@ footer div {
 
 
 /* ---- Organisation list mobile---- */
+
+.header-category-org-list {
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+
+.header-category-org-list h1 {
+  text-transform: capitalize;
+}
+
+.header-category-org-list img {
+  width: 40px;
+  margin-right: 10px;
+}
+
 .all-org-list {
   display: flex;
   flex-flow: wrap;

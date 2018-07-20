@@ -1,12 +1,15 @@
 {{#if category}}
-<h1>{{category}} category</h1>
-{{/if}}
-{{#unless category}}
+<section class="header-category-org-list">
+    <div>
+        <img src="/images/{{category}}.svg" alt="">
+    </div>
+    <h1>{{category}}</h1>
+</section>
+{{/if}} {{#unless category}}
 <h1>All categories</h1>
 {{/unless}}
 <div class="all-org-list">
-    {{#each users}}
-        {{#if this.isActive}}
+    {{#each users}} {{#if this.isActive}}
 
     <div class="detail-card">
         <img src="http://imgs.globovision.com/joHKNsQpCPpOmSbZX0RLmwUPaHU=/847x0/smart/9e28a2ebfcb34ed5bf71e5c093532f33" alt="">
@@ -20,6 +23,5 @@
             </a>
         </div>
     </div>
-        {{/if}}
-    {{/each}}
+    {{/if}} {{/each}}
 </div>
