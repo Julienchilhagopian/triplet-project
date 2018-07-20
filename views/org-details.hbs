@@ -29,10 +29,11 @@
       {{#if user.phone}}
       <p>Telephone: {{user.phone}}</p> {{/if}}
     </div>
-    {{#if showEdit}}
-    <a class="user-edit" target="_blank" href="/profile/edit">Edit page</a>
 
+    {{#if showEdit}}
+      <a class="user-edit" target="_blank" href="/profile/edit">Edit page</a>
     {{/if}}
+    
     <div class="webpage-link">
       {{#if user.website}}
       <a href="{{user.website}}" target="_blank">
