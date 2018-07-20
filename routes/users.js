@@ -33,7 +33,7 @@ router.get('/:id', (req, res, next) => {
         res.redirect('/');
         return;
       }
-      const owner = req.session.currentUser._id === result.id;
+      const owner = req.session.currentUser && req.session.currentUser._id === result.id;
       const data = {
         user: result
       };
@@ -50,10 +50,7 @@ router.get('/:id', (req, res, next) => {
       }
       res.render('org-details', data);
     })
-
-    .catch(error => {
-      console.log(error);
-    });
+    .catch(next);
 });
 
 module.exports = router;
