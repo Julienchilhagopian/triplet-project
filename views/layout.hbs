@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Helpvzla</title>
+  <title>helpvzla</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel='stylesheet' href='/stylesheets/style.css' />
@@ -12,15 +12,12 @@
 <body>
   <div class="container">
     <header>
-
       <nav role="navigation" class="nav-container">
-        <div id="menuToggle">
+        <div class="burger-style" id="menuToggle">
           <input type="checkbox" />
-
           <span></span>
           <span></span>
           <span></span>
-
           <ul id="menu">
             <a href="/org?category=food">
               <li>Food</li>
@@ -36,7 +33,12 @@
             </a>
           </ul>
         </div>
-        <a href="/">helpvzla.com</a>
+        <div class="logo">
+          <a href="/">
+            <img src="/images/logo.svg" alt="">
+          </a>
+        </div>
+
         {{#if currentUser}}
         <div class="nav-buttons">
           <form method="POST" action="/auth/logout">
@@ -71,7 +73,7 @@
       </a>
     </div>
     <div class="mail-address">
-      <a href="" class="mail-address">info-helpvzla@gmail.com</a>
+      <a href="" class="mail-address">helpvzlaproject@gmail.com</a>
     </div>
     <p> Made with love & struggle by the tripletas</p>
 

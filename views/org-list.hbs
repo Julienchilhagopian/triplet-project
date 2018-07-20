@@ -6,13 +6,23 @@
     <h1>{{category}}</h1>
 </section>
 {{/if}} {{#unless category}}
-<h1>All categories</h1>
+<section class="header-category-org-list">
+    <div>
+        <img src="/images/food.svg" alt="">
+    </div>
+    <div>
+        <img src="/images/education.svg" alt="">
+    </div>
+    <div>
+        <img src="/images/medicine.svg" alt="">
+    </div>
+    <h1>All categories</h1>
+</section>
 {{/unless}}
 <div class="all-org-list">
     {{#each users}} {{#if this.isActive}}
-
     <div class="detail-card">
-        <img src="http://imgs.globovision.com/joHKNsQpCPpOmSbZX0RLmwUPaHU=/847x0/smart/9e28a2ebfcb34ed5bf71e5c093532f33" alt="">
+        <img src="{{user.imageUrl}}" alt="">
         <div class="org-description">
             <h2>{{this.username}}</h2>
             <p>{{this.description}}</p>
