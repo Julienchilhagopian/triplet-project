@@ -422,7 +422,8 @@ hr {
   font-size: 40px;
 }
 
-.checkbox-container label, p {
+.checkbox-container label,
+.checkbox-container p {
   font-weight: bold;
 }
 
